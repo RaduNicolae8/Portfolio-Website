@@ -229,6 +229,7 @@ body .about .container img {
     height: 50% !important;
     padding-bottom: 20px;
     width: 100% !important;
+    margin-bottom: 80px;
   }
   body .about .container .right img {
     width: 81% !important;
