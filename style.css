@@ -61,9 +61,7 @@ body .about {
 }
 body section {
   background-color: #f1dec9;
-}
-body section {
-  width: calc(100vw - 7px);
+  width: 100%;
   height: 100vh;
 }
 body .projects {
@@ -92,7 +90,8 @@ body .about {
   align-items: center;
   padding: 0 10vw;
 }
-body .about .left, body .about .right {
+body .about .left,
+body .about .right {
   display: flex;
   justify-content: center;
   height: 100%;
@@ -150,7 +149,7 @@ body .about img {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: black;
+  background: #8d7b68;
 }
 
 ::-webkit-scrollbar-track {
