@@ -30,7 +30,6 @@ body {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      // padding: 0 20px;
       background-color: $color1;
 
       .logo {
@@ -93,9 +92,11 @@ body {
 
   .projects {
     height: 300vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     .sticky {
       position: sticky;
-      overflow: hidden;
       top: 0;
       height: 100vh;
       .scroll-section {

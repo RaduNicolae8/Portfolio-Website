@@ -83,10 +83,12 @@ body section {
 }
 body .projects {
   height: 300vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 body .projects .sticky {
   position: sticky;
-  overflow: hidden;
   top: 0;
   height: 100vh;
 }
