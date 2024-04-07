@@ -145,14 +145,12 @@ body .about .container .left .proffesion {
 body .about .container .right {
   width: 60%;
   align-items: center;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 body .about .container img {
-  height: 100%;
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
+  height: auto;
 }
 
 * {
@@ -217,19 +215,27 @@ body .about .container img {
     background-color: #f1dec9;
     border-radius: 5px;
   }
+  body .about {
+    padding-top: 0;
+    height: auto !important;
+    padding-bottom: 20px;
+  }
   body .about .container {
     flex-direction: column-reverse;
     padding: 0 20px !important;
+    height: 100%;
+    gap: 0;
+    align-items: center;
   }
   body .about .container .left {
     width: 100% !important;
     padding-left: 0px !important;
+    justify-content: flex-start !important;
+    margin-top: 15px;
+    height: 50% !important;
   }
   body .about .container .right {
-    height: 50% !important;
-    padding-bottom: 20px;
     width: 100% !important;
-    margin-bottom: 80px;
   }
   body .about .container .right img {
     width: 81% !important;
