@@ -2,8 +2,67 @@ body {
   width: 100%;
   height: 100%;
 }
+body nav {
+  height: 70px;
+  width: 100%;
+  background-color: #a4907c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  z-index: 1;
+}
+body nav .logo {
+  font-size: 26px;
+  color: #f1dec9;
+  font-weight: 700;
+}
+body nav .left {
+  display: flex;
+  align-items: center;
+}
+body nav .left .vertical-line {
+  height: 30px;
+  width: 1px;
+  background-color: #c8b6a6;
+}
+body nav .right {
+  display: flex;
+}
+body nav a {
+  text-decoration: none;
+  color: #c8b6a6;
+  margin: 0 10px;
+  font-size: 20px;
+  line-height: 20px;
+  display: inline-block;
+  padding: 2px;
+}
+body nav .link:hover {
+  position: relative;
+}
+body nav .link:hover a {
+  color: #f1dec9;
+}
+body nav .link:hover .cross-line {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background-color: #8d7b68;
+  transition: all 0.3s;
+}
+body .about {
+  padding-top: 70px;
+}
 body section {
-  width: 100vw;
+  background-color: #f1dec9;
+}
+body section {
+  width: calc(100vw - 7px);
   height: 100vh;
 }
 body .projects {
@@ -31,4 +90,21 @@ body .projects .sticky .scroll-section {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c8b6a6;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1dec9;
 }/*# sourceMappingURL=style.css.map */
