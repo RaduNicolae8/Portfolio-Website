@@ -1,0 +1,30 @@
+body {
+  width: 100vw;
+  height: 100vh;
+}
+body section {
+  width: 100%;
+  height: 100%;
+}
+body .projects {
+  width: 100%;
+  height: 100%;
+  scroll-snap-type: x proximity;
+  overflow-x: scroll;
+  display: flex;
+}
+body .projects .project-page {
+  flex: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}/*# sourceMappingURL=style.css.map */
