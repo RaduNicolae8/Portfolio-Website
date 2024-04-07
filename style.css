@@ -181,27 +181,57 @@ body .about .container img {
     display: none;
   }
   body .mobile {
+    position: fixed;
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    height: 70px;
+    flex-direction: column;
     background-color: #8d7b68;
+    overflow: hidden;
+  }
+  body .hamburger-menu {
+    display: flex;
+    background-color: #c8b6a6;
+    width: 100%;
+    height: 0px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.3s;
+    overflow: hidden;
+    padding: 0;
+  }
+  body .hamburger-menu a {
+    text-decoration: none;
+    color: #8d7b68;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0 10px;
   }
   body .mobile .container {
+    transition: all 0.3s;
+  }
+  body .mobile .container .inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 70px;
+    transition: all 0.3s;
+  }
+  body .mobile .container .inner-container .container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  body .mobile a {
+  body .mobile .container .inner-container a {
     text-decoration: none;
     color: #f1dec9;
     font-size: 26px;
     font-weight: 700;
     padding: 0 10px;
   }
-  body .mobile .hamburger {
+  body .mobile .container .inner-container .hamburger {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -209,7 +239,7 @@ body .about .container img {
     width: 28px;
     margin-right: 10px;
   }
-  body .mobile .hamburger .line {
+  body .mobile .container .inner-container .hamburger .line {
     height: 3px;
     width: 100%;
     background-color: #f1dec9;
@@ -226,6 +256,7 @@ body .about .container img {
     height: 100%;
     gap: 0;
     align-items: center;
+    margin-top: 70px !important;
   }
   body .about .container .left {
     width: 100% !important;
