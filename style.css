@@ -5,7 +5,7 @@ body {
 body nav {
   height: 70px;
   width: 100%;
-  background-color: #a4907c;
+  background-color: #8d7b68;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,7 +32,7 @@ body nav .right {
 }
 body nav a {
   text-decoration: none;
-  color: #c8b6a6;
+  color: #f1dec9;
   margin: 0 10px;
   font-size: 20px;
   line-height: 20px;
@@ -43,7 +43,7 @@ body nav .link:hover {
   position: relative;
 }
 body nav .link:hover a {
-  color: #f1dec9;
+  color: #c8b6a6;
 }
 body nav .link:hover .cross-line {
   position: absolute;
