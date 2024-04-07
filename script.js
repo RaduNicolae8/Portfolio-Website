@@ -13,7 +13,7 @@ window.addEventListener('scroll', ()=>{
     } else{
         navSelector.style.height = '70px';
     }
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    lastScrollTop = currentScroll;
 
 })
 
