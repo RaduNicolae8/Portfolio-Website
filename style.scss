@@ -2,10 +2,6 @@ $color1: #8d7b68;
 $color2: #a4907c;
 $color3: #c8b6a6;
 $color4: #f1dec9;
-// $color1: #3A3845;
-// $color2: #F7CCAC;
-// $color3: #C69B7B;
-// $color4: #826F66;
 
 body {
   width: 100%;
@@ -21,6 +17,7 @@ body {
     padding: 0 20px;
     position: fixed;
     z-index: 1;
+    transition: all 0.3s;
 
     .logo {
       font-size: 26px;
@@ -97,6 +94,56 @@ body {
       }
     }
   }
+
+  .about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10vw;
+
+    .left, .right{
+      display: flex;
+      justify-content: center;
+      height: 100%;
+    }
+    .left{
+      flex-direction: column;
+      align-items: center;
+      width: 40%;
+      padding-left: 40px;
+      text-align: center;
+      gap: 12px;
+      h1{
+        color: $color1
+      }
+      h3{
+        color: $color2;
+      }
+      .dot{
+        width: 3px;
+        height: 3px;
+        background-color: $color1;
+        border-radius: 50%;
+      }
+      .proffesion{
+        color: $color3;
+        font-size: 20px;
+      }
+    }
+    .right{
+      width: 60%;
+      align-items: center;
+    }
+    img{
+      // max-width: 80%;
+      // height: 80%;
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
 }
 
 * {
@@ -120,4 +167,28 @@ body {
 
 ::-webkit-scrollbar-track {
   background-color: $color4;
+}
+
+@media screen and (max-width: 768px){
+  body{
+
+  .about{
+    flex-direction: column-reverse;
+    padding: 0 20px !important;
+    .left{
+      width: 100% !important;
+      padding-left: 0px !important;
+    }
+    .right{
+      height: 50% !important;
+      padding-top: 80px !important;
+
+      width: 100% !important;
+    }
+    h3{
+      width: 100% !important;
+    }
+  }
+}
+  
 }
