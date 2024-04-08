@@ -21,6 +21,7 @@ body {
     z-index: 1;
     height: 70px;
     transition: all 0.3s;
+    position: fixed;
 
     .container {
       flex-direction: row;

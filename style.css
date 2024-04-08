@@ -16,6 +16,7 @@ body .web {
   z-index: 1;
   height: 70px;
   transition: all 0.3s;
+  position: fixed;
 }
 body .web .container {
   flex-direction: row;
