@@ -15,7 +15,6 @@ body .web {
   overflow: hidden;
   z-index: 1;
   height: 70px;
-  position: fixed;
   transition: all 0.3s;
 }
 body .web .container {
@@ -71,25 +70,20 @@ body .web .container .link:hover .cross-line {
 }
 body .about {
   padding-top: 70px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 body section {
   background-color: #f1dec9;
   width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
 }
 body .projects {
   height: 300vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  overflow: hidden;
 }
 body .projects .sticky {
   position: sticky;
+  overflow: hidden;
   top: 0;
   height: 100vh;
 }
@@ -102,7 +96,11 @@ body .projects .sticky .scroll-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4vw;
+  margin: 0 5vw;
+}
+body .about {
+  display: flex;
+  justify-content: center;
 }
 body .about .container {
   display: flex;
@@ -186,6 +184,7 @@ body .about .container img {
   body .mobile {
     z-index: 4;
     position: fixed;
+    top: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -254,8 +253,10 @@ body .about .container img {
     padding-top: 0;
     height: auto !important;
     padding-bottom: 20px;
+    width: 100% !important;
   }
   body .about .container {
+    width: 100% !important;
     flex-direction: column-reverse;
     padding: 0 20px !important;
     height: 100%;
@@ -264,17 +265,17 @@ body .about .container img {
     margin-top: 70px !important;
   }
   body .about .container .left {
-    width: 100% !important;
+    width: 90% !important;
     padding-left: 0px !important;
     justify-content: flex-start !important;
     margin-top: 15px;
     height: 50% !important;
   }
   body .about .container .right {
-    width: 100% !important;
+    width: 70% !important;
   }
   body .about .container .right img {
-    width: 81% !important;
+    width: 100% !important;
   }
   body .about .container h3 {
     width: 100% !important;

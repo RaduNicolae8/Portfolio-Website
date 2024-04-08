@@ -7,7 +7,7 @@ body {
   width: 100%;
   height: 100%;
 
-  .mobile{
+  .mobile {
     display: none;
   }
   .web {
@@ -20,7 +20,6 @@ body {
     overflow: hidden;
     z-index: 1;
     height: 70px;
-    position: fixed;
     transition: all 0.3s;
 
     .container {
@@ -78,26 +77,20 @@ body {
   }
   .about {
     padding-top: 70px;
+    height: fit-content;
   }
 
   section {
     background-color: $color4;
     width: 100%;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
   }
 
   .projects {
     height: 300vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    overflow: hidden;
     .sticky {
       position: sticky;
+      overflow: hidden;
       top: 0;
       height: 100vh;
       .scroll-section {
@@ -109,11 +102,14 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 4vw;
+        margin: 0 5vw;
       }
     }
   }
-
+  .about{
+    display: flex;
+    justify-content: center;
+  }
   .about .container {
     display: flex;
     justify-content: space-between;
@@ -195,41 +191,40 @@ body {
     .web {
       display: none;
     }
-    .mobile{
+    .mobile {
       z-index: 4;
       position: fixed;
+      top: 0;
       width: 100%;
       display: flex;
       flex-direction: column;
       background-color: $color1;
       overflow: hidden;
     }
-    .hamburger-menu{
+    .hamburger-menu {
       display: flex;
       z-index: 3;
       background-color: $color3;
       width: 100%;
-      height: 0px ;
+      height: 0px;
       justify-content: space-around;
       align-items: center;
       flex-direction: column;
       transition: all 0.3s;
       overflow: hidden;
       padding: 0;
-      a{
+      a {
         text-decoration: none;
         color: $color1;
         font-size: 22px;
         font-weight: 700;
         padding: 0 10px;
-      
       }
     }
-    .mobile .container{
+    .mobile .container {
       transition: all 0.3s;
-
     }
-    .mobile .container .inner-container{
+    .mobile .container .inner-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -237,22 +232,21 @@ body {
       height: 70px;
       transition: all 0.3s;
 
-      .container{
+      .container {
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-
       }
 
-      a{
+      a {
         text-decoration: none;
         color: $color4;
         font-size: 26px;
         font-weight: 700;
         padding: 0 10px;
       }
-      .hamburger{
+      .hamburger {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -260,7 +254,7 @@ body {
         width: 28px;
         margin-right: 10px;
         // background-color: red;
-        .line{
+        .line {
           height: 3px;
           width: 100%;
           background-color: $color4;
@@ -268,39 +262,44 @@ body {
         }
       }
     }
-    .about{
+
+    .about {
       padding-top: 0;
       height: auto !important;
       padding-bottom: 20px;
-    }
-    .about .container {
-      flex-direction: column-reverse;
-      padding: 0 20px !important;
-      height: 100%;
-      gap:0;
-      align-items: center;
-      margin-top: 70px !important;
+      width: 100% !important;
+      .container {
+        width: 100% !important;
+        flex-direction: column-reverse;
+        padding: 0 20px !important;
+        height: 100%;
+        gap: 0;
+        align-items: center;
+        margin-top: 70px !important;
 
-      .left {
-        width: 100% !important;
-        padding-left: 0px !important;
-        justify-content: flex-start !important;
-        margin-top: 15px;
-        height: 50% !important;
-      }
-      .right {
-        width: 100% !important;
-        img{
-          width: 81% !important;
+        .left {
+          width: 90% !important;
+          padding-left: 0px !important;
+          justify-content: flex-start !important;
+          margin-top: 15px;
+          height: 50% !important;
+        }
+        .right {
+          width: 70% !important;
+          img {
+            width: 100% !important;
+          }
+        }
+        h3 {
+          width: 100% !important;
+        }
+        h1 {
+          margin-top: 0px !important;
         }
       }
-      h3 {
-        width: 100% !important;
-      }
-      h1 {
-        margin-top: 0px !important;
-      }
     }
+
+
   }
 }
 
