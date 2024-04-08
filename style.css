@@ -183,6 +183,7 @@ body .about .container img {
     display: none;
   }
   body .mobile {
+    z-index: 4;
     position: fixed;
     width: 100%;
     display: flex;
@@ -192,6 +193,7 @@ body .about .container img {
   }
   body .hamburger-menu {
     display: flex;
+    z-index: 3;
     background-color: #c8b6a6;
     width: 100%;
     height: 0px;

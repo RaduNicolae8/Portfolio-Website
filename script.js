@@ -7,10 +7,9 @@ let lastScrollTop = 0;
 window.addEventListener('scroll', ()=>{
     let navSelector = document.querySelector('nav');
     let navSelectorMobile = document.querySelector('.mobile .container');
-    console.log(navSelector);
     transform(stickySection);
 
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    let currentScroll = window.scrollY || document.documentElement.scrollTop;
     if (currentScroll >= lastScrollTop) {
         navSelector.style.height = '0';
         navSelector.style.overflow = 'hidden';
@@ -22,13 +21,12 @@ window.addEventListener('scroll', ()=>{
         navSelector.style.height = '70px';
         navSelectorMobile.style.height = '70px';
     }
-    
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-
 
 })
 
 hamburger.addEventListener('click', ()=>{
+  console.log("clicked");
   if (hamburgerMenu.style.height == '0px'){
     hamburgerMenu.style.height = '200px';
     hamburgerMenu.style.padding = '20px 0'; 
