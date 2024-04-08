@@ -95,6 +95,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    overflow: hidden;
     .sticky {
       position: sticky;
       top: 0;
@@ -108,7 +109,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 0 5vw;
+        padding: 0 4vw;
       }
     }
   }
