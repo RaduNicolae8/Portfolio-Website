@@ -25,6 +25,7 @@ body {
     }
     .container {
       height: 100vh;
+      
       .nav-menu-item {
         .nav-line {
           position: absolute;
@@ -43,12 +44,27 @@ body {
           width: 100%;
           padding-left: 10px;
         }
+        .up{
+
+        }
+        .circle{
+          position:absolute;
+          bottom:0;
+          right:calc(50% - 5px);
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: darkgray;
+          
+        }
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         height: calc((100% - 80px) / 5);
         width: 220px;
+        position:relative;
+
       }
       .nav-menu-item-separator {
         height: 40px;
