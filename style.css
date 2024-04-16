@@ -40,11 +40,13 @@ body nav .container .nav-menu-item {
 }
 body nav .container .nav-menu-item .nav-line {
   position: absolute;
-  width: 3px;
+  width: 2px;
   background-color: green;
   opacity: 0;
-  height: calc((100% - 200px) / 5);
-  right: calc(50% - 2px);
+  height: 100%;
+  border-radius: 12px;
+  right: calc(50% - 1.5px);
+  transition: all 0.5s;
 }
 body nav .container .nav-menu-item .left {
   width: 100%;
@@ -57,12 +59,13 @@ body nav .container .nav-menu-item .right {
 }
 body nav .container .nav-menu-item .circle {
   position: absolute;
-  bottom: 0;
+  bottom: -3px;
   right: calc(50% - 3.5px);
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background-color: rgb(197, 196, 196);
+  z-index: 2;
 }
 body nav .container .nav-menu-item a {
   text-decoration: none;
@@ -85,6 +88,7 @@ body nav .container .nav-menu-item-separator:first-child img {
   position: absolute;
   bottom: -12px;
   right: calc(50% - 7px);
+  z-index: 2;
 }
 body nav .container .nav-menu-item-separator:last-child {
   position: relative;
@@ -120,26 +124,24 @@ body .projects .sticky .scroll-section {
   align-items: center;
   margin: 0 5vw;
 }
-body .about {
+body .hello {
   display: flex;
   justify-content: center;
   padding-top: 70px;
-  height: -moz-fit-content;
-  height: fit-content;
 }
-body .about .container {
+body .hello .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 1440px;
 }
-body .about .container .left,
-body .about .container .right {
+body .hello .container .left,
+body .hello .container .right {
   display: flex;
   justify-content: center;
   height: 100%;
 }
-body .about .container .left {
+body .hello .container .left {
   flex-direction: column;
   align-items: center;
   width: 40%;
@@ -147,34 +149,34 @@ body .about .container .left {
   text-align: center;
   gap: 12px;
 }
-body .about .container .left h1 {
+body .hello .container .left h1 {
   margin-top: 70px;
   font-size: 40px;
   color: #8d7b68;
 }
-body .about .container .left h3 {
+body .hello .container .left h3 {
   color: #a4907c;
 }
-body .about .container .left .dot {
+body .hello .container .left .dot {
   width: 3px;
   height: 3px;
   background-color: #8d7b68;
   border-radius: 50%;
 }
-body .about .container .left .proffesion {
+body .hello .container .left .proffesion {
   font-size: 32px;
   color: #8d7b68;
   font-weight: 700;
   font-style: italic;
   font-size: 20px;
 }
-body .about .container .right {
+body .hello .container .right {
   width: 60%;
   align-items: center;
   height: -moz-fit-content;
   height: fit-content;
 }
-body .about .container img {
+body .hello .container img {
   width: 100%;
   height: auto;
 }
@@ -203,13 +205,13 @@ body .about .container img {
 }
 
 @media screen and (max-width: 768px) {
-  body .about {
+  body .hello {
     padding-top: 0;
     height: auto !important;
     padding-bottom: 20px;
     width: 100% !important;
   }
-  body .about .container {
+  body .hello .container {
     width: 100% !important;
     flex-direction: column-reverse;
     padding: 0 20px !important;
@@ -218,23 +220,23 @@ body .about .container img {
     align-items: center;
     margin-top: 70px !important;
   }
-  body .about .container .left {
+  body .hello .container .left {
     width: 90% !important;
     padding-left: 0px !important;
     justify-content: flex-start !important;
     margin-top: 15px;
     height: 50% !important;
   }
-  body .about .container .right {
+  body .hello .container .right {
     width: 70% !important;
   }
-  body .about .container .right img {
+  body .hello .container .right img {
     width: 100% !important;
   }
-  body .about .container h3 {
+  body .hello .container h3 {
     width: 100% !important;
   }
-  body .about .container h1 {
+  body .hello .container h1 {
     margin-top: 0px !important;
   }
 }
