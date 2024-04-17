@@ -41,12 +41,14 @@ body nav .hamburger-menu .line {
   border-radius: 5px;
   transition: all 0.4s;
 }
-body nav .hamburger-menu:hover {
-  cursor: pointer;
-  background-color: #c5c6c7;
-}
-body nav .hamburger-menu:hover .line {
-  background-color: #0b0c10;
+@media (hover: hover) {
+  body nav .hamburger-menu:hover {
+    cursor: pointer;
+    background-color: #c5c6c7;
+  }
+  body nav .hamburger-menu:hover .line {
+    background-color: #0b0c10;
+  }
 }
 body nav .vertical-line {
   position: absolute;
@@ -95,14 +97,16 @@ body nav .container .nav-menu-item .left {
 body nav .container .nav-menu-item .left span {
   transition: all 0.5s;
 }
-body nav .container .nav-menu-item .left:has(a:hover) + .right {
-  opacity: 1 !important;
-}
-body nav .container .nav-menu-item .left a:hover span:nth-child(1) {
-  transform: translateY(-4px);
-}
-body nav .container .nav-menu-item .left a:hover span:nth-child(2) {
-  transform: translateY(4px);
+@media (hover: hover) {
+  body nav .container .nav-menu-item .left:has(a:hover) + .right {
+    opacity: 1 !important;
+  }
+  body nav .container .nav-menu-item .left a:hover span:nth-child(1) {
+    transform: translateY(-4px);
+  }
+  body nav .container .nav-menu-item .left a:hover span:nth-child(2) {
+    transform: translateY(4px);
+  }
 }
 body nav .container .nav-menu-item .right {
   width: 100%;
@@ -241,16 +245,16 @@ body .hello .container h4 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c8b6a6;
+  background: #45a29e;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8d7b68;
+  background: #66fcf1;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f1dec9;
+  background-color: #0b0c10;
 }
 
 @media (max-width: 1000px) {

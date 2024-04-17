@@ -47,11 +47,13 @@ body {
         transition: all 0.4s;
       }
     }
-    .hamburger-menu:hover {
-      cursor: pointer;
-      background-color: #c5c6c7;
-      .line {
-        background-color: #0b0c10;
+    @media (hover: hover) {
+      .hamburger-menu:hover {
+        cursor: pointer;
+        background-color: #c5c6c7;
+        .line {
+          background-color: #0b0c10;
+        }
       }
     }
     .vertical-line {
@@ -93,15 +95,18 @@ body {
             transition: all 0.5s;
           }
         }
-        .left:has(a:hover) + .right {
-          opacity: 1 !important;
-        }
-        .left a:hover {
-          span:nth-child(1) {
-            transform: translateY(-4px);
+        @media (hover: hover) {
+          .left:has(a:hover) + .right {
+            opacity: 1 !important;
           }
-          span:nth-child(2) {
-            transform: translateY(4px);
+
+          .left a:hover {
+            span:nth-child(1) {
+              transform: translateY(-4px);
+            }
+            span:nth-child(2) {
+              transform: translateY(4px);
+            }
           }
         }
         .right {
@@ -263,16 +268,17 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c8b6a6;
+  background: #45a29e;
+
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: $color1;
+  background: #66fcf1;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: $color4;
+  background-color: #0b0c10;
 }
 // scroll bar END
 
