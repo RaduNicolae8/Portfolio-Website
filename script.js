@@ -1,5 +1,5 @@
 const stickySection = document.querySelector('.sticky');
-let lastScrollTop = 0;
+const scrolledSections = new Set();
 
 window.addEventListener('scroll', ()=>{
     transform(stickySection);
@@ -23,43 +23,51 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-//script for when a section is into view, change .nav-line opacity to 1
-//use intersection observer
-// Select all navigation links
 const navLinks = document.querySelectorAll('.nav-line');
-
-// Options for the IntersectionObserver
 const options = {
   root: null,
   rootMargin: '0px',
-  threshold: 0.5 // Change as needed
+  threshold: 0.5 
 };
 
-// Callback function for intersection
 function intersectionCallback(entries, observer) {
   entries.forEach(entry => {
-    // If section is in view
-    const navLine = document.querySelector(`.nav-menu-item:has([href='#${entry.target.id}'] ) .nav-line `); 
+    const navLine = document.querySelector(`.nav-menu-item:has([href='#${entry.target.id}'] ) .nav-line `);
+    const navItem = document.querySelector(`.nav-menu-item:has([href='#${entry.target.id}'] )`);
+    const left = navItem.querySelector('.left');
+    const right = navItem.querySelector('.right');
+    // const parent = document.querySelector('body');
+    // const child = document.querySelector(`#${entry.target.id}`);
+    // const childIndex = Array.from(parent.children).indexOf(child);
+    
     if (entry.isIntersecting) {
-      // Change opacity of associated nav-line to 1
+      
+      left.style.left=0;
+      right.style.left=0;
+      right.style.opacity=1;
+      right.style.pointerEvents = 'auto';
+      
 
       if (navLine) {
         navLine.style.opacity = 1;
       }
     } else {
-      // Reset opacity when section is not in view
+
+      left.style.left='40px';
+      right.style.left='40px';
+      right.style.opacity=0;
+      right.style.pointerEvents = 'none';
+      
       if (navLine) {
         navLine.style.opacity = 0;
-
       }
     }
   });
 }
 
-// Create IntersectionObserver
 const observerWithHighThreshold = new IntersectionObserver(intersectionCallback, options);
 const observerWithSmallThreshold = new IntersectionObserver(intersectionCallback, { ...options, threshold: 0.2 });
-// Observe each section
+
 document.querySelectorAll('section').forEach(section => {
   if (section.id === 'projects') {
     observerWithSmallThreshold.observe(section);
