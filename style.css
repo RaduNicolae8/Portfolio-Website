@@ -171,24 +171,29 @@ body .hello .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px !important;
+  width: 600px !important;
   text-align: center;
   color: white;
 }
 body .hello .container h1 {
   color: #66FCF1;
-  font-size: 90px;
+  font-size: 200px;
   font-weight: 700;
 }
 body .hello .container h2, body .hello .container h3 {
   white-space: nowrap;
 }
+body .hello .container h2 {
+  font-size: 60px;
+}
 body .hello .container h3 {
   color: darkgray;
+  font-size: 50px;
   font-style: italic;
 }
 body .hello .container h4 {
   padding: 10px 0;
+  font-size: 30px;
   color: white;
 }
 

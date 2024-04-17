@@ -187,25 +187,29 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 300px !important;
+      width: 600px !important;
       text-align: center;
       color:white;
       h1{
         color: #66FCF1;
-        font-size: 90px;
+        font-size: 200px;
         font-weight: 700;
       }
       h2,h3{
         // no-wrap
         white-space: nowrap;
       }
+      h2{
+        font-size: 60px;
+      }
       h3{
         color: darkgray;
-        //italic
+        font-size: 50px;
         font-style: italic;
       }
       h4{
         padding: 10px 0 ;
+        font-size: 30px;
         color: white;
       }
     }
