@@ -99,8 +99,8 @@ hamburgerMenu.addEventListener("click", () => {
     hamburgerMenu.style.transform = "translateX(110px)"
     items.style.transform = "translateX(0px)"
     middleLine.style.opacity = 0;
-    bottomLine.style.transform = "rotate(-45deg) translateY(-6px) translateX(8px)";
-    topLine.style.transform = "rotate(45deg) translateY(6px) translateX(8px)";
+    bottomLine.style.transform = "rotate(-45deg) translateY(-7.5px) translateX(8px)";
+    topLine.style.transform = "rotate(45deg) translateY(7.5px) translateX(8px)";
 
   }
   else{

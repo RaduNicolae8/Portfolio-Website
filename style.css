@@ -41,15 +41,6 @@ body nav .hamburger-menu .line {
   border-radius: 5px;
   transition: all 0.4s;
 }
-@media (hover: hover) {
-  body nav .hamburger-menu:hover {
-    cursor: pointer;
-    background-color: #c5c6c7;
-  }
-  body nav .hamburger-menu:hover .line {
-    background-color: #0b0c10;
-  }
-}
 body nav .vertical-line {
   position: absolute;
   left: 50%;
