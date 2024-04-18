@@ -1,13 +1,18 @@
-$color1: #8d7b68;
-$color2: #a4907c;
-$color3: #c8b6a6;
-$color4: #f1dec9;
+$color1: #0b0c10;
+$color2: #1f2833;
+$color3: #c5c6c7;
+$color4: #66fcf1;
+$color5: #45a29e;
 
 @font-face {
   font-family: "Barlow";
   src: url("./BarlowSemiCondensed-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+}
+@font-face {
+  font-family: "Playfair";
+  src: url("./PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
 }
 
 body {
@@ -185,7 +190,7 @@ body {
   }
 
   section {
-    background-color: #0b0c10;
+    background-color: $color1;
     width: 100%;
     height: 100vh;
   }
@@ -220,6 +225,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Playfair", sans-serif;
     .container {
       display: flex;
       flex-direction: column;
@@ -250,6 +256,147 @@ body {
         font-size: 30px;
         color: white;
       }
+    }
+  }
+
+  .skills {
+    background-image: url("background2.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    font-family: "Barlow", sans-serif;
+    height: auto;
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 40px;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #287bff;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      position: relative;
+      width: 320px;
+      height: 450px;
+      margin: 30px;
+      border-radius: 20px;
+      border-bottom-left-radius: 160px;
+      border-bottom-right-radius: 160px;
+      box-shadow: 0 15px 0 $color3, inset 0 -15px 0 rgba(255, 255, 255, 0.24),
+        0 45px 0 rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+
+      transform: translateX(-100vw);
+      .icon {
+        position: relative;
+        width: 140px;
+        height: 120px;
+        background: $color1;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+        box-shadow: 0 15px 0 rgba(0, 0, 0, 0.1), inset 0 -8px 0 $color3;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        img {
+          color: #fff;
+          position: relative;
+          z-index: 1;
+          width: 96px;
+          height: 96px;
+          filter: invert(97%) sepia(0%) saturate(7500%) hue-rotate(25deg)
+            brightness(105%) contrast(99%);
+        }
+      }
+
+      .icon::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -50px;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+        border-top-right-radius: 50px;
+        box-shadow: 15px -15px 0 15px $color1;
+      }
+
+      .icon::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -50px;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+        border-top-left-radius: 50px;
+        box-shadow: -15px -15px 0 15px $color1;
+      }
+
+      .content {
+        position: absolute;
+        width: 100%;
+        padding: 30px;
+        padding-top: 150px;
+        text-align: center;
+
+        h2 {
+          font-size: 2em;
+          color: #fff;
+          margin-bottom: 15px;
+        }
+
+        p {
+          color: #fff;
+          font-size: 1.2em;
+          line-height: 1.5em;
+        }
+
+        .dot {
+          background-color: #fff;
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          display: inline-block;
+        }
+      }
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -140px;
+      left: -40%;
+      padding: 0;
+      width: 100%;
+      height: 120%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+      transform: rotate(35deg);
+      pointer-events: none;
+      filter: blur(5px);
+    }
+
+    .card:nth-child(1) {
+      background: linear-gradient(to bottom, $color1, $color5);
+      transition: all 0.5s;
+    }
+
+    .card:nth-child(2) {
+      background: linear-gradient(to bottom, $color2, $color5);
+      transition: all 0.8s;
+    }
+
+    .card:nth-child(3) {
+      background: linear-gradient(to bottom, $color3, $color5);
+      transition: all 1.3s;
     }
   }
 }
@@ -338,6 +485,23 @@ body {
       .hamburger-menu {
         display: flex;
         z-index: 4;
+      }
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  body {
+    .skills {
+      .container {
+        padding: 20px;
+        .card {
+          margin: 40px 0;
+          // width: 100% ;
+          // transform: scale(0.8) !important;
+          border-bottom-left-radius: 80px;
+          border-bottom-right-radius: 80px;
+        }
       }
     }
   }
