@@ -14,6 +14,10 @@ $color5: #45a29e;
   font-family: "Playfair";
   src: url("./PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Montserrat";
+  src: url("./Montserrat-VariableFont_wght.ttf") format("truetype");
+}
 
 body {
   width: 100%;
@@ -225,7 +229,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Playfair", sans-serif;
+    font-family: "Montserrat";
     .container {
       display: flex;
       flex-direction: column;
@@ -235,7 +239,7 @@ body {
       color: white;
       h1 {
         color: #66fcf1;
-        font-size: 200px;
+        font-size: 160px;
         font-weight: 700;
       }
       h2,
@@ -244,14 +248,16 @@ body {
         white-space: nowrap;
       }
       h2 {
-        font-size: 60px;
+        font-size: 50px;
       }
       h3 {
         color: darkgray;
-        font-size: 50px;
+        font-size: 44px;
         font-style: italic;
+        font-weight: 200;
       }
       h4 {
+        font-family: "Playfair", sans-serif;
         padding: 10px 0;
         font-size: 30px;
         color: white;

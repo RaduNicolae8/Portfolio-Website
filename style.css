@@ -8,6 +8,10 @@
   font-family: "Playfair";
   src: url("./PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Montserrat";
+  src: url("./Montserrat-VariableFont_wght.ttf") format("truetype");
+}
 body {
   width: 100%;
   height: 100%;
@@ -197,7 +201,7 @@ body .hello {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Playfair", sans-serif;
+  font-family: "Montserrat";
 }
 body .hello .container {
   display: flex;
@@ -209,7 +213,7 @@ body .hello .container {
 }
 body .hello .container h1 {
   color: #66fcf1;
-  font-size: 200px;
+  font-size: 160px;
   font-weight: 700;
 }
 body .hello .container h2,
@@ -217,14 +221,16 @@ body .hello .container h3 {
   white-space: nowrap;
 }
 body .hello .container h2 {
-  font-size: 60px;
+  font-size: 50px;
 }
 body .hello .container h3 {
   color: darkgray;
-  font-size: 50px;
+  font-size: 44px;
   font-style: italic;
+  font-weight: 200;
 }
 body .hello .container h4 {
+  font-family: "Playfair", sans-serif;
   padding: 10px 0;
   font-size: 30px;
   color: white;
