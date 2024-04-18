@@ -1,13 +1,18 @@
-$color1: #8d7b68;
-$color2: #a4907c;
-$color3: #c8b6a6;
-$color4: #f1dec9;
+$color1: #0B0C10;
+$color2: #1F2833;
+$color3: #C5C6C7;
+$color4: #66FCF1;
+$color5: #45A29E;
 
 @font-face {
   font-family: "Barlow";
   src: url("./BarlowSemiCondensed-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+}
+@font-face {
+  font-family: "Playfair";
+  src: url("./PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
 }
 
 body {
@@ -220,6 +225,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Playfair", sans-serif;
     .container {
       display: flex;
       flex-direction: column;
@@ -251,6 +257,44 @@ body {
         color: white;
       }
     }
+  }
+
+  .skills{
+    color: white;
+    background-color: $color1;
+    height: 50vh;
+    position: relative;
+    // background-image: url("background.png");
+    // background-position: center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    overflow: hidden;
+    .container{
+      opacity: 0;
+    .skill-card{
+      position: absolute;
+      top: 50%;
+      left: calc(50% - 70px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color2;
+      border: 1px solid $color5;
+      border-radius: 12px;
+      width: 140px;
+      height: 60px;
+      transition: all 2s;
+    }
+    @media (hover: hover) {
+      .skill-card:hover {
+        background-color: $color3;
+        color: $color2;
+        // transition: 0.5s all;
+        cursor: pointer;
+      }
+    
+    }
+  }
   }
 }
 

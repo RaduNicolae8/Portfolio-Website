@@ -65,6 +65,32 @@ function intersectionCallback(entries, observer) {
         navLine.style.opacity = 0;
       }
     }
+    var skillCards = document.querySelectorAll(".skill-card");
+
+    if (entry.target.id === "skills" && entry.isIntersecting) {
+      document.querySelector(".skills .container").style.opacity = '1';
+      console.log(skillCards)
+
+      skillCards[0].style.transform = `translate(-200px, -170px)`;
+      skillCards[1].style.transform = `translate(0px, -170px)`;
+      skillCards[2].style.transform = `translate(200px, -170px)`;
+      skillCards[3].style.transform = `translate(-100px, -80px)`;
+      skillCards[4].style.transform = `translate(100px, -80px)`;
+      skillCards[5].style.transform = `translate(-200px, 0px)`;
+      skillCards[6].style.transform = `translate(0px, 0px)`;
+      skillCards[7].style.transform = `translate(200px, 0px)`;
+      skillCards[8].style.transform = `translate(-100px, 90px)`;
+      skillCards[9].style.transform = `translate(100px, 90px)`;
+      skillCards[10].style.transform = `translate(-200px, 170px)`;
+      skillCards[11].style.transform = `translate(0px, 170px)`;
+      skillCards[12].style.transform = `translate(200px, 170px)`;
+
+    } else if (entry.target.id === "skills"){
+      document.querySelector(".skills .container").style.opacity = '1';
+      for (var i=0; i< skillCards.length; i++){
+        skillCards[i].style.transform = `translate(0px)`;
+      }
+    }
   });
 }
 
