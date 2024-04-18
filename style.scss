@@ -286,8 +286,8 @@ body {
       height: 450px;
       margin: 30px;
       border-radius: 20px;
-      border-bottom-left-radius: 80px;
-      border-bottom-right-radius: 80px;
+      border-bottom-left-radius: 160px;
+      border-bottom-right-radius: 160px;
       box-shadow: 0 15px 0 $color3, inset 0 -15px 0 rgba(255, 255, 255, 0.24),
         0 45px 0 rgba(0, 0, 0, 0.15);
       overflow: hidden;
@@ -383,20 +383,48 @@ body {
       pointer-events: none;
       filter: blur(5px);
     }
-
+    .card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0; 
+      transition: opacity 0.5s; 
+    }
     .card:nth-child(1) {
-      background: linear-gradient(to bottom, $color1, $color5);
+      background-image: linear-gradient(to bottom, $color1, $color5);
       transition: all 0.5s;
+      &::after{
+        background-image: linear-gradient(to bottom, $color1, $color4);
+      }
+      &:hover::after {
+        opacity: 0.3;
+      }
     }
 
     .card:nth-child(2) {
       background: linear-gradient(to bottom, $color2, $color5);
       transition: all 0.8s;
+      &::after{
+        background-image: linear-gradient(to bottom, $color2, $color4);
+      }
+      &:hover::after {
+        opacity: 0.3;
+      }
     }
 
     .card:nth-child(3) {
       background: linear-gradient(to bottom, $color3, $color5);
       transition: all 1.3s;
+      &::after{
+        background-image: linear-gradient(to bottom, $color3, $color4);
+      }
+      &:hover::after {
+        opacity: 0.3;
+      }
     }
   }
 }
@@ -497,6 +525,8 @@ body {
         padding: 20px;
         .card {
           margin: 40px 0;
+          border-bottom-left-radius: 80px;
+          border-bottom-right-radius: 80px;
         }
       }
     }

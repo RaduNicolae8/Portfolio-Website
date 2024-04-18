@@ -256,8 +256,8 @@ body .skills .card {
   height: 450px;
   margin: 30px;
   border-radius: 20px;
-  border-bottom-left-radius: 80px;
-  border-bottom-right-radius: 80px;
+  border-bottom-left-radius: 160px;
+  border-bottom-right-radius: 160px;
   box-shadow: 0 15px 0 #c5c6c7, inset 0 -15px 0 rgba(255, 255, 255, 0.24), 0 45px 0 rgba(0, 0, 0, 0.15);
   overflow: hidden;
   transform: translateX(-100vw);
@@ -342,17 +342,46 @@ body .skills .card::before {
   pointer-events: none;
   filter: blur(5px);
 }
+body .skills .card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
 body .skills .card:nth-child(1) {
-  background: linear-gradient(to bottom, #0b0c10, #45a29e);
+  background-image: linear-gradient(to bottom, #0b0c10, #45a29e);
   transition: all 0.5s;
+}
+body .skills .card:nth-child(1)::after {
+  background-image: linear-gradient(to bottom, #0b0c10, #66fcf1);
+}
+body .skills .card:nth-child(1):hover::after {
+  opacity: 0.3;
 }
 body .skills .card:nth-child(2) {
   background: linear-gradient(to bottom, #1f2833, #45a29e);
   transition: all 0.8s;
 }
+body .skills .card:nth-child(2)::after {
+  background-image: linear-gradient(to bottom, #1f2833, #66fcf1);
+}
+body .skills .card:nth-child(2):hover::after {
+  opacity: 0.3;
+}
 body .skills .card:nth-child(3) {
   background: linear-gradient(to bottom, #c5c6c7, #45a29e);
   transition: all 1.3s;
+}
+body .skills .card:nth-child(3)::after {
+  background-image: linear-gradient(to bottom, #c5c6c7, #66fcf1);
+}
+body .skills .card:nth-child(3):hover::after {
+  opacity: 0.3;
 }
 
 * {
@@ -434,5 +463,7 @@ body .skills .card:nth-child(3) {
   }
   body .skills .container .card {
     margin: 40px 0;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
   }
 }/*# sourceMappingURL=style.css.map */
