@@ -1,7 +1,9 @@
 const stickySection = document.querySelector(".sticky");
 const hamburgerMenu = document.querySelector(".hamburger-menu");
-var buttonToggled = false;
 const scrolledSections = new Set();
+const windowWidth = window.innerWidth;
+var buttonToggled = false;
+var skillsVisitedOddTimes = false;
 
 window.addEventListener("scroll", () => {
   transform(stickySection);
@@ -29,7 +31,7 @@ const navLinks = document.querySelectorAll(".nav-line");
 const options = {
   root: null,
   rootMargin: "0px",
-  threshold: 0.5,
+  threshold: 0.6,
 };
 
 function intersectionCallback(entries, observer) {
@@ -65,30 +67,20 @@ function intersectionCallback(entries, observer) {
         navLine.style.opacity = 0;
       }
     }
-    var skillCards = document.querySelectorAll(".skill-card");
+    var cards = document.querySelectorAll(".card");
 
     if (entry.target.id === "skills" && entry.isIntersecting) {
       document.querySelector(".skills .container").style.opacity = '1';
-      console.log(skillCards)
+      for (var i=0; i< cards.length; i++){
+        cards[i].style.transform = `translateX(0px)`;
+        cards[i].style.opacity = 1;
 
-      skillCards[0].style.transform = `translate(-200px, -170px)`;
-      skillCards[1].style.transform = `translate(0px, -170px)`;
-      skillCards[2].style.transform = `translate(200px, -170px)`;
-      skillCards[3].style.transform = `translate(-100px, -80px)`;
-      skillCards[4].style.transform = `translate(100px, -80px)`;
-      skillCards[5].style.transform = `translate(-200px, 0px)`;
-      skillCards[6].style.transform = `translate(0px, 0px)`;
-      skillCards[7].style.transform = `translate(200px, 0px)`;
-      skillCards[8].style.transform = `translate(-100px, 90px)`;
-      skillCards[9].style.transform = `translate(100px, 90px)`;
-      skillCards[10].style.transform = `translate(-200px, 170px)`;
-      skillCards[11].style.transform = `translate(0px, 170px)`;
-      skillCards[12].style.transform = `translate(200px, 170px)`;
+      }
 
     } else if (entry.target.id === "skills"){
-      document.querySelector(".skills .container").style.opacity = '1';
-      for (var i=0; i< skillCards.length; i++){
-        skillCards[i].style.transform = `translate(0px)`;
+      for (var i=0; i< cards.length; i++){
+        cards[i].style.transform = `translate(-40vw)`;
+        cards[i].style.opacity = 0;
       }
     }
   });
@@ -106,7 +98,10 @@ const observerWithSmallThreshold = new IntersectionObserver(
 document.querySelectorAll("section").forEach((section) => {
   if (section.id === "projects") {
     observerWithSmallThreshold.observe(section);
-  } else {
+  } else if (section.id === "skills" &&  windowWidth < 840) {
+    observerWithSmallThreshold.observe(section);
+  }
+  else {
     observerWithHighThreshold.observe(section);
   }
 });

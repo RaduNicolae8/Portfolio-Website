@@ -230,35 +230,129 @@ body .hello .container h4 {
   color: white;
 }
 body .skills {
-  color: white;
-  background-color: #0B0C10;
-  height: 50vh;
-  position: relative;
+  background-image: url("background2.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   overflow: hidden;
+  font-family: "Barlow", sans-serif;
+  height: auto;
 }
 body .skills .container {
-  opacity: 0;
-}
-body .skills .container .skill-card {
-  position: absolute;
-  top: 50%;
-  left: calc(50% - 70px);
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1F2833;
-  border: 1px solid #45A29E;
-  border-radius: 12px;
-  width: 140px;
-  height: 60px;
-  transition: all 2s;
+  flex-wrap: wrap;
+  padding: 40px;
+  min-height: 100vh;
 }
-@media (hover: hover) {
-  body .skills .container .skill-card:hover {
-    background-color: #C5C6C7;
-    color: #1F2833;
-    cursor: pointer;
-  }
+body .skills .card {
+  background: #287bff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  width: 320px;
+  height: 450px;
+  margin: 30px;
+  border-radius: 20px;
+  border-bottom-left-radius: 160px;
+  border-bottom-right-radius: 160px;
+  box-shadow: 0 15px 0 #c5c6c7, inset 0 -15px 0 rgba(255, 255, 255, 0.24), 0 45px 0 rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transform: translateX(-100vw);
+}
+body .skills .card .icon {
+  position: relative;
+  width: 140px;
+  height: 120px;
+  background: #0b0c10;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  box-shadow: 0 15px 0 rgba(0, 0, 0, 0.1), inset 0 -8px 0 #c5c6c7;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+body .skills .card .icon img {
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  width: 96px;
+  height: 96px;
+  filter: invert(97%) sepia(0%) saturate(7500%) hue-rotate(25deg) brightness(105%) contrast(99%);
+}
+body .skills .card .icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-top-right-radius: 50px;
+  box-shadow: 15px -15px 0 15px #0b0c10;
+}
+body .skills .card .icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -50px;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  border-top-left-radius: 50px;
+  box-shadow: -15px -15px 0 15px #0b0c10;
+}
+body .skills .card .content {
+  position: absolute;
+  width: 100%;
+  padding: 30px;
+  padding-top: 150px;
+  text-align: center;
+}
+body .skills .card .content h2 {
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 15px;
+}
+body .skills .card .content p {
+  color: #fff;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+body .skills .card .content .dot {
+  background-color: #fff;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  display: inline-block;
+}
+body .skills .card::before {
+  content: "";
+  position: absolute;
+  top: -140px;
+  left: -40%;
+  padding: 0;
+  width: 100%;
+  height: 120%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+  transform: rotate(35deg);
+  pointer-events: none;
+  filter: blur(5px);
+}
+body .skills .card:nth-child(1) {
+  background: linear-gradient(to bottom, #0b0c10, #45a29e);
+  transition: all 0.5s;
+}
+body .skills .card:nth-child(2) {
+  background: linear-gradient(to bottom, #1f2833, #45a29e);
+  transition: all 0.8s;
+}
+body .skills .card:nth-child(3) {
+  background: linear-gradient(to bottom, #c5c6c7, #45a29e);
+  transition: all 1.3s;
 }
 
 * {
@@ -332,5 +426,15 @@ body .skills .container .skill-card {
   body nav .hamburger-menu {
     display: flex;
     z-index: 4;
+  }
+}
+@media (max-width: 460px) {
+  body .skills .container {
+    padding: 20px;
+  }
+  body .skills .container .card {
+    margin: 40px 0;
+    border-bottom-left-radius: 80px;
+    border-bottom-right-radius: 80px;
   }
 }/*# sourceMappingURL=style.css.map */
