@@ -286,8 +286,8 @@ body {
       height: 450px;
       margin: 30px;
       border-radius: 20px;
-      border-bottom-left-radius: 160px;
-      border-bottom-right-radius: 160px;
+      border-bottom-left-radius: 80px;
+      border-bottom-right-radius: 80px;
       box-shadow: 0 15px 0 $color3, inset 0 -15px 0 rgba(255, 255, 255, 0.24),
         0 45px 0 rgba(0, 0, 0, 0.15);
       overflow: hidden;
@@ -497,10 +497,6 @@ body {
         padding: 20px;
         .card {
           margin: 40px 0;
-          // width: 100% ;
-          // transform: scale(0.8) !important;
-          border-bottom-left-radius: 80px;
-          border-bottom-right-radius: 80px;
         }
       }
     }

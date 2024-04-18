@@ -256,8 +256,8 @@ body .skills .card {
   height: 450px;
   margin: 30px;
   border-radius: 20px;
-  border-bottom-left-radius: 160px;
-  border-bottom-right-radius: 160px;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
   box-shadow: 0 15px 0 #c5c6c7, inset 0 -15px 0 rgba(255, 255, 255, 0.24), 0 45px 0 rgba(0, 0, 0, 0.15);
   overflow: hidden;
   transform: translateX(-100vw);
@@ -434,7 +434,5 @@ body .skills .card:nth-child(3) {
   }
   body .skills .container .card {
     margin: 40px 0;
-    border-bottom-left-radius: 80px;
-    border-bottom-right-radius: 80px;
   }
 }/*# sourceMappingURL=style.css.map */
