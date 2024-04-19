@@ -4,9 +4,27 @@ const scrolledSections = new Set();
 const windowWidth = window.innerWidth;
 var buttonToggled = false;
 var skillsVisitedOddTimes = false;
+var lastScroll = 0;
 
 window.addEventListener("scroll", () => {
   transform(stickySection);
+
+  var scrollDirection = window.scrollY > this.lastScroll
+    ? "down"
+    : "up";
+  
+  if (scrollDirection === "down")
+  {
+    hamburgerMenu.style.transform = "translateX(-100px)";
+
+  }
+  else{
+    hamburgerMenu.style.transform = "translateX(0px)";
+  }
+  
+    this.lastScroll = window.scrollY;
+
+
 });
 
 function transform(section) {
@@ -15,6 +33,7 @@ function transform(section) {
   let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
   percentage = percentage < 0 ? 0 : percentage > 200 ? 200 : percentage;
   scrollSection.style.transform = `translate3d(${-percentage}vw, 0, 0)`;
+
 }
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
