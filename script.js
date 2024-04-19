@@ -9,22 +9,17 @@ var lastScroll = 0;
 window.addEventListener("scroll", () => {
   transform(stickySection);
 
-  var scrollDirection = window.scrollY > this.lastScroll
-    ? "down"
-    : "up";
-  
-  if (scrollDirection === "down")
-  {
-    hamburgerMenu.style.transform = "translateX(-100px)";
+  var scrollDirection = window.scrollY > lastScroll ? "down" : "up";
 
+  if (!buttonToggled) {
+    if (scrollDirection === "down") {
+      hamburgerMenu.style.transform = "translateX(-100px)";
+    } else {
+      hamburgerMenu.style.transform = "translateX(0px)";
+    }
+    
+    lastScroll = window.scrollY;
   }
-  else{
-    hamburgerMenu.style.transform = "translateX(0px)";
-  }
-  
-    this.lastScroll = window.scrollY;
-
-
 });
 
 function transform(section) {
@@ -33,7 +28,6 @@ function transform(section) {
   let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
   percentage = percentage < 0 ? 0 : percentage > 200 ? 200 : percentage;
   scrollSection.style.transform = `translate3d(${-percentage}vw, 0, 0)`;
-
 }
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -89,15 +83,13 @@ function intersectionCallback(entries, observer) {
     var cards = document.querySelectorAll(".card");
 
     if (entry.target.id === "skills" && entry.isIntersecting) {
-      document.querySelector(".skills .container").style.opacity = '1';
-      for (var i=0; i< cards.length; i++){
+      document.querySelector(".skills .container").style.opacity = "1";
+      for (var i = 0; i < cards.length; i++) {
         cards[i].style.transform = `translateX(0px)`;
         cards[i].style.opacity = 1;
-
       }
-
-    } else if (entry.target.id === "skills"){
-      for (var i=0; i< cards.length; i++){
+    } else if (entry.target.id === "skills") {
+      for (var i = 0; i < cards.length; i++) {
         cards[i].style.transform = `translate(-40vw)`;
         cards[i].style.opacity = 0;
       }
@@ -117,10 +109,9 @@ const observerWithSmallThreshold = new IntersectionObserver(
 document.querySelectorAll("section").forEach((section) => {
   if (section.id === "projects") {
     observerWithSmallThreshold.observe(section);
-  } else if (section.id === "skills" &&  windowWidth < 840) {
+  } else if (section.id === "skills" && windowWidth < 840) {
     observerWithSmallThreshold.observe(section);
-  }
-  else {
+  } else {
     observerWithHighThreshold.observe(section);
   }
 });
@@ -134,20 +125,19 @@ hamburgerMenu.addEventListener("click", () => {
   var topLine = document.querySelector(".top-line");
   var nav = document.querySelector("nav");
   if (!buttonToggled) {
-    verticalLine.style.transform = "translateX(0px)"
-    container.style.transform = "translateX(0px)"
-    hamburgerMenu.style.transform = "translateX(110px)"
-    items.style.transform = "translateX(0px)"
+    verticalLine.style.transform = "translateX(0px)";
+    container.style.transform = "translateX(0px)";
+    hamburgerMenu.style.transform = "translateX(110px)";
+    items.style.transform = "translateX(0px)";
     middleLine.style.opacity = 0;
-    bottomLine.style.transform = "rotate(-45deg) translateY(-7.5px) translateX(8px)";
+    bottomLine.style.transform =
+      "rotate(-45deg) translateY(-7.5px) translateX(8px)";
     topLine.style.transform = "rotate(45deg) translateY(7.5px) translateX(8px)";
-
-  }
-  else{
-    verticalLine.style.transform = "translateX(-220px)"
-    container.style.transform = "translateX(-220px)"
-    hamburgerMenu.style.transform = "translateX(0px)"
-    items.style.transform = "translateX(-220px)"
+  } else {
+    verticalLine.style.transform = "translateX(-220px)";
+    container.style.transform = "translateX(-220px)";
+    hamburgerMenu.style.transform = "translateX(0px)";
+    items.style.transform = "translateX(-220px)";
 
     middleLine.style.opacity = 1;
     bottomLine.style.transform = "rotate(0deg) translateY(0px) translateX(0px)";
