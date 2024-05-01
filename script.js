@@ -6,8 +6,6 @@ var buttonToggled = false;
 var skillsVisitedOddTimes = false;
 var lastScroll = 0;
 var firstTimeSeeingHelloSection = 0;
-window.firstLoad = 0;
-
 
 window.addEventListener("scroll", () => {
   transform(stickySection);
@@ -20,7 +18,7 @@ window.addEventListener("scroll", () => {
     } else {
       hamburgerMenu.style.transform = "translateX(0px)";
     }
-    
+
     lastScroll = window.scrollY;
   }
 });
@@ -106,16 +104,16 @@ function intersectionCallback(entries, observer) {
       line1.style.opacity = 1;
       line2.style.opacity = 1;
       line3.style.opacity = 1;
-    }else{
-      if (window.firstLoad>4)
-      {
-        line1.style.opacity = 0;
-        line2.style.opacity = 0;
-        line3.style.opacity = 0;
-      }
-      else{
-        window.firstLoad = window.firstLoad + 1;
-      }
+    } else if (entry.target.id === "hello") {
+      line1.style.opacity = 0;
+      line2.style.opacity = 0;
+      line3.style.opacity = 0;
+    }
+
+    if (entry.target.id === "contact" && entry.isIntersecting) {
+      document.querySelector(".contact .container").style.opacity = "1";
+    } else if (entry.target.id === "contact") {
+      document.querySelector(".contact .container").style.opacity = "0";
     }
   });
 }
