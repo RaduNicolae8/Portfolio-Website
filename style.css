@@ -214,7 +214,7 @@ body .hello .container {
 }
 body .hello .container h1 {
   color: #66fcf1;
-  font-size: 160px;
+  font-size: 120px;
   font-weight: 700;
 }
 body .hello .container h2,
@@ -222,19 +222,57 @@ body .hello .container h3 {
   white-space: nowrap;
 }
 body .hello .container h2 {
-  font-size: 50px;
+  font-size: 38px;
 }
 body .hello .container h3 {
   color: darkgray;
-  font-size: 44px;
+  font-size: 32px;
   font-style: italic;
   font-weight: 200;
 }
 body .hello .container h4 {
   font-family: "Playfair", sans-serif;
   padding: 10px 0;
-  font-size: 30px;
+  font-size: 20px;
   color: white;
+  text-align: left;
+  padding-left: 12px;
+  opacity: 0;
+}
+body .hello .container h4::before {
+  content: ">";
+  height: 100%;
+  font-size: 40px;
+  color: #66fcf1;
+  position: relative;
+  top: 6px;
+  margin-right: 10px;
+}
+body .hello .container .line1 {
+  transition: all 0.2s;
+}
+body .hello .container .line2 {
+  transition: all 0.7s;
+}
+body .hello .container .line3 {
+  transition: all 1.2s;
+}
+body .hello .container .line3:after {
+  content: "";
+  width: 14px;
+  height: 2px;
+  background: #66fcf1;
+  opacity: 0;
+  display: inline-block;
+  animation: blink 1s linear infinite alternate;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 body .skills {
   background-image: url("background2.png");
@@ -414,7 +452,7 @@ body .skills .card:nth-child(3):hover::after {
   background-color: #0b0c10;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   body .hello .container {
     width: 80vw;
   }

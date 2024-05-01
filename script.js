@@ -5,6 +5,8 @@ const windowWidth = window.innerWidth;
 var buttonToggled = false;
 var skillsVisitedOddTimes = false;
 var lastScroll = 0;
+var firstTimeSeeingHelloSection = 0;
+
 
 window.addEventListener("scroll", () => {
   transform(stickySection);
@@ -93,6 +95,22 @@ function intersectionCallback(entries, observer) {
         cards[i].style.transform = `translate(-40vw)`;
         cards[i].style.opacity = 0;
       }
+    }
+
+    if (entry.target.id === "hello" && entry.isIntersecting) {
+      const h4 = document.querySelectorAll(".hello h4");
+      h4.forEach((h) => {
+        h.style.opacity = 1;
+
+      });
+    }else{
+      const h4 = document.querySelectorAll(".hello h4");
+      if(firstTimeSeeingHelloSection>4){
+      h4.forEach((h) => {
+        h.style.opacity = 0;
+      });
+      }
+      firstTimeSeeingHelloSection = firstTimeSeeingHelloSection + 1;
     }
   });
 }

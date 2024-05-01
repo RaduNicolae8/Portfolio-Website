@@ -231,6 +231,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "Montserrat";
+
     .container {
       display: flex;
       flex-direction: column;
@@ -240,7 +241,7 @@ body {
       color: white;
       h1 {
         color: #66fcf1;
-        font-size: 160px;
+        font-size: 120px;
         font-weight: 700;
       }
       h2,
@@ -249,19 +250,58 @@ body {
         white-space: nowrap;
       }
       h2 {
-        font-size: 50px;
+        font-size: 38px;
       }
       h3 {
         color: darkgray;
-        font-size: 44px;
+        font-size: 32px;
         font-style: italic;
         font-weight: 200;
       }
       h4 {
         font-family: "Playfair", sans-serif;
         padding: 10px 0;
-        font-size: 30px;
+        font-size: 20px;
         color: white;
+        text-align: left;
+        padding-left: 12px;
+        opacity: 0;
+      }
+      h4::before {
+        content: ">";
+        height: 100%;
+        font-size: 40px;
+        color: #66fcf1;
+        position: relative;
+        top: 6px;
+        margin-right: 10px;
+      }
+      .line1 {
+        transition: all 0.2s;
+      }
+      .line2 {
+        transition: all 0.7s;
+      }
+      .line3 {
+        transition: all 1.2s;
+      }
+      .line3:after {
+        content: '';
+        width: 14px;
+        height: 2px;
+        background: $color4;
+        opacity: 0;
+        display: inline-block;
+        animation: blink 1s linear infinite alternate;
+      }
+      
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
       }
     }
   }
@@ -398,13 +438,13 @@ body {
       width: 100%;
       height: 100%;
       z-index: 0;
-      opacity: 0; 
-      transition: opacity 0.5s; 
+      opacity: 0;
+      transition: opacity 0.5s;
     }
     .card:nth-child(1) {
       background-image: linear-gradient(to bottom, $color1, $color5);
       transition: all 0.5s;
-      &::after{
+      &::after {
         background-image: linear-gradient(to bottom, $color1, $color4);
       }
       &:hover::after {
@@ -415,7 +455,7 @@ body {
     .card:nth-child(2) {
       background: linear-gradient(to bottom, $color2, $color5);
       transition: all 0.8s;
-      &::after{
+      &::after {
         background-image: linear-gradient(to bottom, $color2, $color4);
       }
       &:hover::after {
@@ -426,7 +466,7 @@ body {
     .card:nth-child(3) {
       background: linear-gradient(to bottom, $color3, $color5);
       transition: all 1.3s;
-      &::after{
+      &::after {
         background-image: linear-gradient(to bottom, $color3, $color4);
       }
       &:hover::after {
@@ -466,7 +506,7 @@ body {
 
 // media queries START
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   body {
     .hello {
       .container {
