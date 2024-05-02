@@ -15,6 +15,7 @@
 body {
   width: 100%;
   height: 100%;
+  background-color: #0b0c10;
 }
 body nav {
   font-family: Barlow, sans-serif;
@@ -241,12 +242,12 @@ body .hello .container h4 {
 }
 body .hello .container h4::before {
   content: ">";
-  height: 100%;
-  font-size: 40px;
+  font-size: 28px;
+  font-weight: 700;
   color: #66fcf1;
   position: relative;
-  top: 6px;
-  margin-right: 10px;
+  top: 2.5px;
+  margin-right: 6px;
 }
 body .hello .container .line1 {
   transition: all 0.2s;
