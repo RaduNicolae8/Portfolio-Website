@@ -207,13 +207,14 @@ body {
       flex-direction: row;
       margin-left: 25vh;
       img{
-        width: 400px;
+        width: 320px;
         height: auto;
         padding: 0 20px;
+        transition: all 0.5s;
+
       }
       img:hover{
         transform: scale(2);
-        transition: all 0.5s;
       }
     }
     .saveme{
@@ -223,10 +224,11 @@ body {
         width: 200px;
         height: auto;
         padding: 0 20px;
+        transition: all 0.5s;
+
       }
       img:hover{
         transform: scale(1.4);
-        transition: all 0.5s;
       }
     }
 
@@ -234,13 +236,13 @@ body {
       display: flex;
       flex-direction: row;
       img{
-        width: 400px;
+        width: 320px;
         height: auto;
         padding: 0 20px;
+        transition: all 0.5s;
       }
       img:hover{
         transform: scale(2);
-        transition: all 0.5s;
       }
     }
 
@@ -259,7 +261,6 @@ body {
         justify-content: space-between;
         align-items: center;
         margin: 0 5vw;
-        transition: all 0.1s;
       }
     }
   }

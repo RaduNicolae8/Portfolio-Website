@@ -182,13 +182,13 @@ body .projects .ezservice {
   margin-left: 25vh;
 }
 body .projects .ezservice img {
-  width: 400px;
+  width: 320px;
   height: auto;
   padding: 0 20px;
+  transition: all 0.5s;
 }
 body .projects .ezservice img:hover {
   transform: scale(2);
-  transition: all 0.5s;
 }
 body .projects .saveme {
   display: flex;
@@ -198,23 +198,23 @@ body .projects .saveme img {
   width: 200px;
   height: auto;
   padding: 0 20px;
+  transition: all 0.5s;
 }
 body .projects .saveme img:hover {
   transform: scale(1.4);
-  transition: all 0.5s;
 }
 body .projects .donate-compass {
   display: flex;
   flex-direction: row;
 }
 body .projects .donate-compass img {
-  width: 400px;
+  width: 320px;
   height: auto;
   padding: 0 20px;
+  transition: all 0.5s;
 }
 body .projects .donate-compass img:hover {
   transform: scale(2);
-  transition: all 0.5s;
 }
 body .projects .sticky {
   position: sticky;
@@ -233,7 +233,6 @@ body .projects .sticky .scroll-section {
   justify-content: space-between;
   align-items: center;
   margin: 0 5vw;
-  transition: all 0.1s;
 }
 body .hello {
   background-image: url("background.png");
