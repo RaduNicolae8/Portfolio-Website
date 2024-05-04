@@ -174,7 +174,47 @@ body section {
   height: 100vh;
 }
 body .projects {
-  height: 300vh;
+  height: 275vh;
+}
+body .projects .ezservice {
+  display: flex;
+  flex-direction: row;
+  margin-left: 25vh;
+}
+body .projects .ezservice img {
+  width: 400px;
+  height: auto;
+  padding: 0 20px;
+}
+body .projects .ezservice img:hover {
+  transform: scale(2);
+  transition: all 0.5s;
+}
+body .projects .saveme {
+  display: flex;
+  flex-direction: row;
+}
+body .projects .saveme img {
+  width: 200px;
+  height: auto;
+  padding: 0 20px;
+}
+body .projects .saveme img:hover {
+  transform: scale(1.4);
+  transition: all 0.5s;
+}
+body .projects .donate-compass {
+  display: flex;
+  flex-direction: row;
+}
+body .projects .donate-compass img {
+  width: 400px;
+  height: auto;
+  padding: 0 20px;
+}
+body .projects .donate-compass img:hover {
+  transform: scale(2);
+  transition: all 0.5s;
 }
 body .projects .sticky {
   position: sticky;
@@ -186,12 +226,14 @@ body .projects .sticky .scroll-section {
   position: absolute;
   top: 0;
   height: 100%;
-  width: 300vw;
+  width: -moz-fit-content;
+  width: fit-content;
   will-change: transform;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 5vw;
+  transition: all 0.1s;
 }
 body .hello {
   background-image: url("background.png");

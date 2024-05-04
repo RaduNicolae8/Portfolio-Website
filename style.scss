@@ -201,7 +201,49 @@ body {
   }
 
   .projects {
-    height: 300vh;
+    height: 275vh;
+    .ezservice{
+      display: flex;
+      flex-direction: row;
+      margin-left: 25vh;
+      img{
+        width: 400px;
+        height: auto;
+        padding: 0 20px;
+      }
+      img:hover{
+        transform: scale(2);
+        transition: all 0.5s;
+      }
+    }
+    .saveme{
+      display: flex;
+      flex-direction: row;
+      img{
+        width: 200px;
+        height: auto;
+        padding: 0 20px;
+      }
+      img:hover{
+        transform: scale(1.4);
+        transition: all 0.5s;
+      }
+    }
+
+    .donate-compass{
+      display: flex;
+      flex-direction: row;
+      img{
+        width: 400px;
+        height: auto;
+        padding: 0 20px;
+      }
+      img:hover{
+        transform: scale(2);
+        transition: all 0.5s;
+      }
+    }
+
     .sticky {
       position: sticky;
       overflow: hidden;
@@ -211,12 +253,13 @@ body {
         position: absolute;
         top: 0;
         height: 100%;
-        width: 300vw;
+        width: fit-content;
         will-change: transform;
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin: 0 5vw;
+        transition: all 0.1s;
       }
     }
   }

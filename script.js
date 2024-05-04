@@ -1,11 +1,13 @@
 const stickySection = document.querySelector(".sticky");
 const hamburgerMenu = document.querySelector(".hamburger-menu");
-const scrolledSections = new Set();
 const windowWidth = window.innerWidth;
 var buttonToggled = false;
 var skillsVisitedOddTimes = false;
 var lastScroll = 0;
 var firstTimeSeeingHelloSection = 0;
+var scrollSectionWidth;
+
+
 
 window.addEventListener("scroll", () => {
   transform(stickySection);
@@ -23,11 +25,19 @@ window.addEventListener("scroll", () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const scrollSection = projects.querySelector(".scroll-section");
+  scrollSectionWidth = window.getComputedStyle(scrollSection).width;
+});
+
 function transform(section) {
+  var scrollSectionWidthVW = parseInt(scrollSectionWidth) / window.innerWidth * 100;
+
   const offsetTop = section.parentElement.offsetTop;
   const scrollSection = section.querySelector(".scroll-section");
-  let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
-  percentage = percentage < 0 ? 0 : percentage > 200 ? 200 : percentage;
+  let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * (scrollSectionWidthVW/2);
+  percentage = percentage < 0 ? 0 : percentage > scrollSectionWidthVW-80 ? scrollSectionWidthVW-80 : percentage;
+  console.log("scroll ", window.scrollY-offsetTop," inner ", window.innerHeight," perc ", percentage);
   scrollSection.style.transform = `translate3d(${-percentage}vw, 0, 0)`;
 }
 
@@ -58,9 +68,6 @@ function intersectionCallback(entries, observer) {
     );
     const left = navItem.querySelector(".left");
     const right = navItem.querySelector(".right");
-    // const parent = document.querySelector('body');
-    // const child = document.querySelector(`#${entry.target.id}`);
-    // const childIndex = Array.from(parent.children).indexOf(child);
 
     if (entry.isIntersecting) {
       left.style.left = 0;
