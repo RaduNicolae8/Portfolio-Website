@@ -57,7 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
   verticalStoppingpoint = projectsSectionHeight - window.innerHeight;
 });
 window.addEventListener("resize", function () {
-  location.reload(true);
+  scrollSectionWidth = window.getComputedStyle(scrollSection).width;
+  projects.style.height = parseInt(scrollSectionWidth) / 2 + "px";
+  projectsSectionHeight = parseInt(scrollSectionWidth) / 2;
+
+  stoppingPoint = projectsSectionHeight * 2 - windowWidth / 2;
+  verticalStoppingpoint = projectsSectionHeight - window.innerHeight;
 });
 
 function transform(section) {
