@@ -1,9 +1,15 @@
 const stickySection = document.querySelector(".sticky");
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const windowWidth = window.innerWidth;
-const easyServiceDescription = document.querySelector(".EasyService-description");
+const easyServiceDescription = document.querySelector(
+  ".EasyService-description"
+);
 const saveMeDescription = document.querySelector(".SaveMe-description");
-const donateCompassDescription = document.querySelector(".DonateCompass-description");
+const donateCompassDescription = document.querySelector(
+  ".DonateCompass-description"
+);
+const arrow = document.querySelector(".arrow");
+const arrowReverse = document.querySelector(".arrow-reverse");
 const scrollSection = document.querySelector(".scroll-section");
 const projects = document.querySelector(".projects");
 var buttonToggled = false;
@@ -15,57 +21,75 @@ var projectsSectionHeight;
 var flag = false;
 var stoppingPoint;
 var verticalStoppingpoint;
-
+var arrowVisible = false;
 
 window.addEventListener("scroll", () => {
   transform(stickySection);
+
 
   var scrollDirection = window.scrollY > lastScroll ? "down" : "up";
 
   if (!buttonToggled) {
     if (scrollDirection === "down") {
       hamburgerMenu.style.transform = "translateX(-100px)";
+      if (arrowVisible) {
+        arrow.style.opacity = 1;
+        arrowReverse.style.opacity = 0;
+      }
     } else {
       hamburgerMenu.style.transform = "translateX(0px)";
+      if (arrowVisible) {
+        arrow.style.opacity = 0;
+        arrowReverse.style.opacity = 1;
+      }
     }
 
     lastScroll = window.scrollY;
   }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   scrollSectionWidth = window.getComputedStyle(scrollSection).width;
-  projects.style.height = parseInt(scrollSectionWidth) / 2 + 'px';
+  projects.style.height = parseInt(scrollSectionWidth) / 2 + "px";
   projectsSectionHeight = parseInt(scrollSectionWidth) / 2;
 
-  stoppingPoint = projectsSectionHeight*2 - windowWidth/2;
+  stoppingPoint = projectsSectionHeight * 2 - windowWidth / 2;
   verticalStoppingpoint = projectsSectionHeight - window.innerHeight;
 });
-window.addEventListener("resize", function() {
+window.addEventListener("resize", function () {
   //clear cache
-  location.reload(true);
+  // location.reload(true);
 });
-
 
 function transform(section) {
   const offsetTop = section.parentElement.offsetTop;
   const scrollSection = section.querySelector(".scroll-section");
 
-  let percentage = ((window.scrollY - offsetTop) / verticalStoppingpoint) * stoppingPoint;
-  percentage = percentage < 0 ? 0 : percentage > stoppingPoint ? stoppingPoint : percentage;
+  let percentage =
+    ((window.scrollY - offsetTop) / verticalStoppingpoint) * stoppingPoint;
+  percentage =
+    percentage < 0
+      ? 0
+      : percentage > stoppingPoint
+      ? stoppingPoint
+      : percentage;
   scrollSection.style.transform = `translate3d(${-percentage}px, 0, 0)`;
 
   if (percentage === stoppingPoint || percentage === 0) {
     saveMeDescription.style.opacity = 0;
+    arrowVisible = false;
+    arrow.style.opacity = 0;
+    arrowReverse.style.opacity = 0;
+  } else {
+    arrowVisible = true;
   }
   if (percentage === stoppingPoint) {
     donateCompassDescription.style.opacity = 0;
     flag = true;
-  } else if (flag)
-    {
-      donateCompassDescription.style.opacity = 1;
-      flag = false;
-    }
+  } else if (flag) {
+    donateCompassDescription.style.opacity = 1;
+    flag = false;
+  }
 }
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -78,46 +102,45 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-let projectsOptions = {        
-  threshold: 0.15
-}
+let projectsOptions = {
+  threshold: 0.15,
+};
 
-
-function projectsIntersectionCallback(entries, observer){
-
-  entries.forEach(entry => {
-    if (entry.isIntersecting && entry.target.id === "EasyService-page"){
+function projectsIntersectionCallback(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting && entry.target.id === "EasyService-page") {
       easyServiceDescription.style.opacity = 1;
       saveMeDescription.style.opacity = 0;
       donateCompassDescription.style.opacity = 0;
-    } else if (entry.target.id === "EasyService-page"){
+    } else if (entry.target.id === "EasyService-page") {
       saveMeDescription.style.opacity = 1;
       easyServiceDescription.style.opacity = 0;
       donateCompassDescription.style.opacity = 0;
     }
-    if(entry.isIntersecting && entry.target.id === "SaveMe-page"){
+    if (entry.isIntersecting && entry.target.id === "SaveMe-page") {
       saveMeDescription.style.opacity = 1;
       easyServiceDescription.style.opacity = 0;
       donateCompassDescription.style.opacity = 0;
-    } 
-    if(entry.isIntersecting && entry.target.id === "DonateCompass-page"){
+    }
+    if (entry.isIntersecting && entry.target.id === "DonateCompass-page") {
       donateCompassDescription.style.opacity = 1;
       easyServiceDescription.style.opacity = 0;
       saveMeDescription.style.opacity = 0;
-    } else if (entry.target.id==="DonateCompass-page"){
+    } else if (entry.target.id === "DonateCompass-page") {
       saveMeDescription.style.opacity = 1;
       easyServiceDescription.style.opacity = 0;
       donateCompassDescription.style.opacity = 0;
     }
-  })
+  });
 }
 
-let observer = new IntersectionObserver(projectsIntersectionCallback, projectsOptions)
-document.querySelectorAll(".project-page").forEach(project => {
+let observer = new IntersectionObserver(
+  projectsIntersectionCallback,
+  projectsOptions
+);
+document.querySelectorAll(".project-page").forEach((project) => {
   observer.observe(project);
-  
-})
-
+});
 
 const navLinks = document.querySelectorAll(".nav-line");
 const options = {
