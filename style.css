@@ -193,10 +193,13 @@ body .projects .description {
   transition: all 0.3s;
   width: 80vw;
   height: 0;
+  font-family: "Montserrat";
 }
 body .projects .description h1 {
   text-align: center;
   padding-bottom: 20px;
+  font-weight: bold;
+  font-style: italic;
 }
 body .projects .description p::before {
   content: ">";
@@ -214,8 +217,10 @@ body .projects img {
   transition: all 0.5s;
   border-radius: 12px;
 }
-body .projects img:hover {
-  transform: scale(1.3);
+@media (hover: hover) {
+  body .projects img:hover {
+    transform: scale(1.3);
+  }
 }
 body .projects .ezservice {
   display: flex;
@@ -597,6 +602,12 @@ body .contact .container img {
   body nav .hamburger-menu {
     display: flex;
     z-index: 4;
+  }
+  body .projects .description h1 {
+    font-size: 20px;
+  }
+  body .projects .description p {
+    font-size: 14px;
   }
 }
 @media (max-width: 460px) {
