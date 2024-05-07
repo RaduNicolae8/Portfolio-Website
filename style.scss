@@ -203,7 +203,7 @@ body {
     .arrow {
       position: sticky;
       top: 80vh;
-      left: calc(50vw - 50px);
+      left: calc(50vw - 15px);
       width: 100px;
       height: 100px;
       transition: all 0.5s;
@@ -246,7 +246,7 @@ body {
     .arrow-reverse {
       position: sticky;
       top: 80vh;
-      left: calc(50vw - 50px);
+      left: calc(50vw - 15px);
       width: 100px;
       transition: all 0.5s;
       opacity: 0;
