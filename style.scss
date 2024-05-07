@@ -202,27 +202,58 @@ body {
 
   .projects {
     height: 275vh;
-    img{
+    position: relative;
+    .EasyService-description{
+      opacity: 0;
+    }
+    .SaveMe-description{
+      opacity: 0;
+    }
+    .DonateCompass-description{
+      opacity: 0;
+    }
+    .description {
+      position: sticky;
+      top: 10px;
+      left: 10vw;
+      transition: all 0.3s;
+      width: 80vw;
+      height: 0;
+      h1 {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+      p::before {
+        content: ">";
+        font-size: 28px;
+        font-weight: 700;
+        color: #66fcf1;
+        position: relative;
+        top: 2.5px;
+        margin-right: 6px;
+      }
+    }
+    img {
       max-height: 40vh;
       max-width: 90vw;
       margin: 0 20px;
       transition: all 0.5s;
       border-radius: 12px;
     }
-    img:hover{
+    img:hover {
       transform: scale(1.3);
     }
-    .ezservice{
+    .ezservice {
       display: flex;
       flex-direction: row;
       margin-left: 25vh;
     }
-    .saveme{
+    .saveme {
       display: flex;
       flex-direction: row;
     }
 
-    .donate-compass{
+    .donate-compass {
       display: flex;
       flex-direction: row;
     }
@@ -311,7 +342,7 @@ body {
         transition: all 1.2s;
       }
       .line3:after {
-        content: '';
+        content: "";
         width: 14px;
         height: 2px;
         background: $color4;
@@ -319,7 +350,7 @@ body {
         display: inline-block;
         animation: blink 0.5s linear infinite alternate;
       }
-      
+
       @keyframes blink {
         50% {
           opacity: 0;
@@ -500,12 +531,12 @@ body {
     }
   }
 
-  .contact{
+  .contact {
     font-family: "Montserrat";
     height: 400px;
     display: flex;
     justify-content: center;
-    .container{
+    .container {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -513,30 +544,30 @@ body {
       gap: 14px;
       opacity: 0;
       transition: all 1s;
-      a{
+      a {
         text-decoration: none;
         color: white;
       }
-      h2{
+      h2 {
         text-align: center;
       }
-      .cv{
+      .cv {
         border: 1px solid white;
         border-radius: 20px;
         padding: 20px;
-        
-        &:hover{
+
+        &:hover {
           background-color: $color4;
           color: $color2;
           border-color: black;
         }
       }
-      .email{
+      .email {
         font-style: italic;
         font-weight: bold;
         color: $color4;
       }
-      img{
+      img {
         width: 48px;
         height: 48px;
       }

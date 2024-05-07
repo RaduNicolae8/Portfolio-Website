@@ -7,6 +7,10 @@ var lastScroll = 0;
 var firstTimeSeeingHelloSection = 0;
 var scrollSectionWidth;
 var projectsSectionHeight;
+var flag = false;
+const easyServiceDescription = document.querySelector(".EasyService-description");
+const saveMeDescription = document.querySelector(".SaveMe-description");
+const donateCompassDescription = document.querySelector(".DonateCompass-description");
 
 
 
@@ -33,11 +37,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   projects.style.height = parseInt(scrollSectionWidth) / 2 + 'px';
   projectsSectionHeight = parseInt(scrollSectionWidth) / 2;
+
 });
 
 function transform(section) {
-  var scrollSectionWidthVW = parseInt(scrollSectionWidth) / window.innerWidth * 100;
-
   const offsetTop = section.parentElement.offsetTop;
   const scrollSection = section.querySelector(".scroll-section");
 
@@ -47,9 +50,17 @@ function transform(section) {
   percentage = percentage < 0 ? 0 : percentage > stoppingPoint ? stoppingPoint : percentage;
   scrollSection.style.transform = `translate3d(${-percentage}px, 0, 0)`;
 
-  console.log(window.scrollY-offsetTop);
-  console.log(percentage);
-  console.log(stoppingPoint);
+  if (percentage === stoppingPoint || percentage === 0) {
+    saveMeDescription.style.opacity = 0;
+  }
+  if (percentage === stoppingPoint) {
+    donateCompassDescription.style.opacity = 0;
+    flag = true;
+  } else if (flag)
+    {
+      donateCompassDescription.style.opacity = 1;
+      flag = false;
+    }
 }
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -61,6 +72,47 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
   });
 });
+
+let projectsOptions = {        
+  threshold: 0.15
+}
+
+
+function projectsIntersectionCallback(entries, observer){
+
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.target.id === "EasyService-page"){
+      easyServiceDescription.style.opacity = 1;
+      saveMeDescription.style.opacity = 0;
+      donateCompassDescription.style.opacity = 0;
+    } else if (entry.target.id === "EasyService-page"){
+      saveMeDescription.style.opacity = 1;
+      easyServiceDescription.style.opacity = 0;
+      donateCompassDescription.style.opacity = 0;
+    }
+    if(entry.isIntersecting && entry.target.id === "SaveMe-page"){
+      saveMeDescription.style.opacity = 1;
+      easyServiceDescription.style.opacity = 0;
+      donateCompassDescription.style.opacity = 0;
+    } 
+    if(entry.isIntersecting && entry.target.id === "DonateCompass-page"){
+      donateCompassDescription.style.opacity = 1;
+      easyServiceDescription.style.opacity = 0;
+      saveMeDescription.style.opacity = 0;
+    } else if (entry.target.id==="DonateCompass-page"){
+      saveMeDescription.style.opacity = 1;
+      easyServiceDescription.style.opacity = 0;
+      donateCompassDescription.style.opacity = 0;
+    }
+  })
+}
+
+let observer = new IntersectionObserver(projectsIntersectionCallback, projectsOptions)
+document.querySelectorAll(".project-page").forEach(project => {
+  observer.observe(project);
+  
+})
+
 
 const navLinks = document.querySelectorAll(".nav-line");
 const options = {

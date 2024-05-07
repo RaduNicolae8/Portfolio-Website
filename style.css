@@ -175,6 +175,37 @@ body section {
 }
 body .projects {
   height: 275vh;
+  position: relative;
+}
+body .projects .EasyService-description {
+  opacity: 0;
+}
+body .projects .SaveMe-description {
+  opacity: 0;
+}
+body .projects .DonateCompass-description {
+  opacity: 0;
+}
+body .projects .description {
+  position: sticky;
+  top: 10px;
+  left: 10vw;
+  transition: all 0.3s;
+  width: 80vw;
+  height: 0;
+}
+body .projects .description h1 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+body .projects .description p::before {
+  content: ">";
+  font-size: 28px;
+  font-weight: 700;
+  color: #66fcf1;
+  position: relative;
+  top: 2.5px;
+  margin-right: 6px;
 }
 body .projects img {
   max-height: 40vh;
