@@ -199,89 +199,87 @@ body {
     body {
       background-color: #322b2b;
     }
-
-    .arrow {
+    .arrow-container {
       position: sticky;
+      display: flex;
+      justify-content: center;
       top: 80vh;
-      left: calc(50vw - 15px);
+      left: calc(50vw - 50px);
       width: 100px;
       height: 100px;
-      transition: all 0.5s;
+      .arrow {
+        transition: all 0.5s;
+        width: 0;
+        span {
+          display: block;
+          width: 30px;
+          height: 30px;
+          border-bottom: 5px solid;
+          border-right: 5px solid;
 
-      span {
-        display: block;
-        width: 30px;
-        height: 30px;
-        border-bottom: 5px solid;
-        border-right: 5px solid;
-
-        border-image: linear-gradient(to right, white, $color4) 1;
-        border-radius: 10px;
-        transform: rotate(45deg);
-        margin: -10px;
-        animation: animate 2s infinite;
-      }
-      span:nth-child(2) {
-        animation-delay: -0.2s;
-      }
-      span:nth-child(3) {
-        animation-delay: -0.4s;
-      }
-
-      @keyframes animate {
-        0% {
-          opacity: 0;
-          transform: rotate(45deg) translate(-20px, -20px);
+          border-image: linear-gradient(to right, white, $color4) 1;
+          border-radius: 10px;
+          transform: rotate(45deg);
+          margin: -10px;
+          animation: animate 2s infinite;
         }
-        50% {
-          opacity: 1;
+        span:nth-child(2) {
+          animation-delay: -0.2s;
         }
-        100% {
-          opacity: 0;
-          transform: rotate(45deg) translate(20px, 20px);
+        span:nth-child(3) {
+          animation-delay: -0.4s;
         }
-      }
-    }
 
-    .arrow-reverse {
-      position: sticky;
-      top: 80vh;
-      left: calc(50vw - 15px);
-      width: 100px;
-      transition: all 0.5s;
-      opacity: 0;
-      height: 100px;
-
-      span {
-        display: block;
-        width: 30px;
-        height: 30px;
-        border-bottom: 5px solid;
-        border-right: 5px solid;
-
-        border-image: linear-gradient(to right, white, $color4) 1;
-        border-radius: 10px;
-        transform: rotate(45deg);
-        margin: -10px;
-        animation: animate-reverse 2s infinite;
-      }
-      span:nth-child(2) {
-        animation-delay: 0.2s;
-      }
-      span:nth-child(3) {
-        animation-delay: 0.4s;
-      }
-      @keyframes animate-reverse {
-        0% {
-          opacity: 0;
-          transform: rotate(-135deg) translate(-40px, -40px);
+        @keyframes animate {
+          0% {
+            opacity: 0;
+            transform: rotate(45deg) translate(-20px, -20px);
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+            transform: rotate(45deg) translate(20px, 20px);
+          }
         }
-        50% {
-          opacity: 1;
+      }
+
+      .arrow-reverse {
+        transition: all 0.5s;
+        width: 0;
+
+        span {
+          display: block;
+          width: 30px;
+          height: 30px;
+          border-bottom: 5px solid;
+          border-right: 5px solid;
+
+          border-image: linear-gradient(to right, white, $color4) 1;
+          border-radius: 10px;
+          transform: rotate(45deg);
+          margin: -10px;
+          animation: animate-reverse 2s infinite;
         }
-        100% {
-          opacity: 0;
-          transform: rotate(-135deg) translate(0px, 0px);
+        span:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        span:nth-child(3) {
+          animation-delay: 0.4s;
+        }
+        @keyframes animate-reverse {
+          0% {
+            opacity: 0;
+            transform: rotate(-135deg) translate(-40px, -40px);
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
+            transform: rotate(-135deg) translate(0px, 0px);
+          }
         }
       }
     }
