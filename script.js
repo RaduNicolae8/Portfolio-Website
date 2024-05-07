@@ -1,6 +1,11 @@
 const stickySection = document.querySelector(".sticky");
 const hamburgerMenu = document.querySelector(".hamburger-menu");
 const windowWidth = window.innerWidth;
+const easyServiceDescription = document.querySelector(".EasyService-description");
+const saveMeDescription = document.querySelector(".SaveMe-description");
+const donateCompassDescription = document.querySelector(".DonateCompass-description");
+const scrollSection = document.querySelector(".scroll-section");
+const projects = document.querySelector(".projects");
 var buttonToggled = false;
 var skillsVisitedOddTimes = false;
 var lastScroll = 0;
@@ -8,10 +13,8 @@ var firstTimeSeeingHelloSection = 0;
 var scrollSectionWidth;
 var projectsSectionHeight;
 var flag = false;
-const easyServiceDescription = document.querySelector(".EasyService-description");
-const saveMeDescription = document.querySelector(".SaveMe-description");
-const donateCompassDescription = document.querySelector(".DonateCompass-description");
-
+var stoppingPoint;
+var verticalStoppingpoint;
 
 
 window.addEventListener("scroll", () => {
@@ -31,21 +34,23 @@ window.addEventListener("scroll", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  const scrollSection = document.querySelector(".scroll-section");
-  const projects = document.querySelector(".projects");
   scrollSectionWidth = window.getComputedStyle(scrollSection).width;
-
   projects.style.height = parseInt(scrollSectionWidth) / 2 + 'px';
   projectsSectionHeight = parseInt(scrollSectionWidth) / 2;
 
+  stoppingPoint = projectsSectionHeight*2 - windowWidth/2;
+  verticalStoppingpoint = projectsSectionHeight - window.innerHeight;
 });
+window.addEventListener("resize", function() {
+  //clear cache
+  location.reload(true);
+});
+
 
 function transform(section) {
   const offsetTop = section.parentElement.offsetTop;
   const scrollSection = section.querySelector(".scroll-section");
 
-  var stoppingPoint = projectsSectionHeight*2 - windowWidth/2;
-  var verticalStoppingpoint = projectsSectionHeight - window.innerHeight;
   let percentage = ((window.scrollY - offsetTop) / verticalStoppingpoint) * stoppingPoint;
   percentage = percentage < 0 ? 0 : percentage > stoppingPoint ? stoppingPoint : percentage;
   scrollSection.style.transform = `translate3d(${-percentage}px, 0, 0)`;

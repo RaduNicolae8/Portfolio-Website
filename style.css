@@ -176,6 +176,7 @@ body section {
 body .projects {
   height: 275vh;
   position: relative;
+  background-image: url(background2.png);
 }
 body .projects .EasyService-description {
   opacity: 0;
@@ -489,11 +490,19 @@ body .skills .card:nth-child(3)::after {
 body .skills .card:nth-child(3):hover::after {
   opacity: 0.3;
 }
+body .experience {
+  background-image: url(background2.png);
+  background-position: center;
+  background-size: contain;
+}
 body .contact {
   font-family: "Montserrat";
   height: 400px;
   display: flex;
   justify-content: center;
+  background-image: url(background2.png);
+  background-position: center;
+  background-size: cover;
 }
 body .contact .container {
   display: flex;

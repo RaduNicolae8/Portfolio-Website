@@ -203,6 +203,7 @@ body {
   .projects {
     height: 275vh;
     position: relative;
+    background-image: url(background2.png);
     .EasyService-description{
       opacity: 0;
     }
@@ -536,11 +537,20 @@ body {
     }
   }
 
+  .experience{
+    background-image: url(background2.png);
+    background-position: center;
+    background-size: contain;
+  }
+
   .contact {
     font-family: "Montserrat";
     height: 400px;
     display: flex;
     justify-content: center;
+    background-image: url(background2.png);
+    background-position: center;
+    background-size: cover;
     .container {
       display: flex;
       flex-direction: column;
