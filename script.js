@@ -57,8 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
   verticalStoppingpoint = projectsSectionHeight - window.innerHeight;
 });
 window.addEventListener("resize", function () {
-  //clear cache
-  // location.reload(true);
+  location.reload(true);
 });
 
 function transform(section) {
