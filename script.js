@@ -6,6 +6,7 @@ var skillsVisitedOddTimes = false;
 var lastScroll = 0;
 var firstTimeSeeingHelloSection = 0;
 var scrollSectionWidth;
+var projectsSectionHeight;
 
 
 
@@ -26,8 +27,12 @@ window.addEventListener("scroll", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  const scrollSection = projects.querySelector(".scroll-section");
+  const scrollSection = document.querySelector(".scroll-section");
+  const projects = document.querySelector(".projects");
   scrollSectionWidth = window.getComputedStyle(scrollSection).width;
+
+  projects.style.height = parseInt(scrollSectionWidth) / 2 + 'px';
+  projectsSectionHeight = parseInt(scrollSectionWidth) / 2;
 });
 
 function transform(section) {
@@ -35,10 +40,16 @@ function transform(section) {
 
   const offsetTop = section.parentElement.offsetTop;
   const scrollSection = section.querySelector(".scroll-section");
-  let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * (scrollSectionWidthVW/2);
-  percentage = percentage < 0 ? 0 : percentage > scrollSectionWidthVW-40 ? scrollSectionWidthVW-40 : percentage;
-  console.log("scroll ", window.scrollY-offsetTop," inner ", window.innerHeight," perc ", percentage);
-  scrollSection.style.transform = `translate3d(${-percentage}vw, 0, 0)`;
+
+  var stoppingPoint = projectsSectionHeight*2 - windowWidth/2;
+  var verticalStoppingpoint = projectsSectionHeight - window.innerHeight;
+  let percentage = ((window.scrollY - offsetTop) / verticalStoppingpoint) * stoppingPoint;
+  percentage = percentage < 0 ? 0 : percentage > stoppingPoint ? stoppingPoint : percentage;
+  scrollSection.style.transform = `translate3d(${-percentage}px, 0, 0)`;
+
+  console.log(window.scrollY-offsetTop);
+  console.log(percentage);
+  console.log(stoppingPoint);
 }
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {

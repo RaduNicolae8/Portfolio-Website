@@ -176,45 +176,28 @@ body section {
 body .projects {
   height: 275vh;
 }
+body .projects img {
+  max-height: 40vh;
+  max-width: 90vw;
+  margin: 0 20px;
+  transition: all 0.5s;
+  border-radius: 12px;
+}
+body .projects img:hover {
+  transform: scale(1.3);
+}
 body .projects .ezservice {
   display: flex;
   flex-direction: row;
   margin-left: 25vh;
 }
-body .projects .ezservice img {
-  width: 320px;
-  height: auto;
-  padding: 0 20px;
-  transition: all 0.5s;
-}
-body .projects .ezservice img:hover {
-  transform: scale(2);
-}
 body .projects .saveme {
   display: flex;
   flex-direction: row;
 }
-body .projects .saveme img {
-  width: 200px;
-  height: auto;
-  padding: 0 20px;
-  transition: all 0.5s;
-}
-body .projects .saveme img:hover {
-  transform: scale(1.4);
-}
 body .projects .donate-compass {
   display: flex;
   flex-direction: row;
-}
-body .projects .donate-compass img {
-  width: 320px;
-  height: auto;
-  padding: 0 20px;
-  transition: all 0.5s;
-}
-body .projects .donate-compass img:hover {
-  transform: scale(2);
 }
 body .projects .sticky {
   position: sticky;
