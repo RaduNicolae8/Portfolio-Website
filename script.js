@@ -216,6 +216,44 @@ function intersectionCallback(entries, observer) {
       hamburgerMenu.style.top = "80px";
     }
 
+    var content1 = document.querySelector(".content1");
+    var content2 = document.querySelector(".content2");
+    var content3 = document.querySelector(".content3");
+    var content4 = document.querySelector(".content4");
+    var li1 = document.querySelector(".li1");
+    var li2 = document.querySelector(".li2");
+    var li3 = document.querySelector(".li3");
+    var li4 = document.querySelector(".li4");
+
+    if (entry.target.id === "experience" && entry.isIntersecting) {
+      content1.style.opacity = 1;
+      content2.style.opacity = 1;
+      content3.style.opacity = 1;
+      content4.style.opacity = 1;
+      li1.style.opacity = 1;
+      li2.style.opacity = 1;
+      li3.style.opacity = 1;
+      li4.style.opacity = 1;
+
+      content1.style.transform = "translateX(0px)";
+      content2.style.transform = "translateX(0px)";
+      content3.style.transform = "translateX(0px)";
+      content4.style.transform = "translateX(0px)";
+    } else if (entry.target.id === "experience") {
+      content1.style.opacity = 0;
+      content2.style.opacity = 0;
+      content3.style.opacity = 0;
+      content4.style.opacity = 0;
+      li1.style.opacity = 0;
+      li2.style.opacity = 0;
+      li3.style.opacity = 0;
+      li4.style.opacity = 0;
+
+      content1.style.transform = "translateX(200px)";
+      content2.style.transform = "translateX(-200px)";
+      content3.style.transform = "translateX(200px)";
+      content4.style.transform = "translateX(-200px)";
+    }
 
     var navLineExperience = document.querySelector(
       `.nav-menu-item:has([href='#experience'] ) .nav-line `

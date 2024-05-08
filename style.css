@@ -599,6 +599,8 @@ body .experience .timeline ul li {
   padding: 20px 0;
   list-style-type: none;
   z-index: 0;
+  opacity: 0;
+  transition: all 0.5s;
 }
 body .experience .timeline ul li:last-child {
   border-bottom-left-radius: 20px;
@@ -621,9 +623,10 @@ body .experience .timeline ul li:before {
   border: 3px solid #66fcf1;
   border-radius: 50%;
   z-index: 2;
+  transition: all 0.5s;
 }
 body .experience .timeline ul li:nth-child(odd) .content {
-  left: 50px;
+  left: 51px;
   background: #1f2833;
   border-radius: 12px;
 }
@@ -645,6 +648,8 @@ body .experience .timeline ul li .content {
   padding: 20px;
   z-index: 14;
   color: #fff;
+  opacity: 0;
+  transition: all 0.5s;
 }
 body .experience .timeline ul li .content:before {
   content: "";
@@ -654,7 +659,22 @@ body .experience .timeline ul li .content:before {
   width: 38px;
   height: 4px;
   z-index: 1;
-  opacity: 1;
+  transition: all 0.5s;
+}
+body .experience .timeline ul li .content1 {
+  transform: translateX(200px);
+}
+body .experience .timeline ul li .content2 {
+  transform: translateX(-200px);
+  transition-delay: 0.5s;
+}
+body .experience .timeline ul li .content3 {
+  transform: translateX(200px);
+  transition-delay: 1s;
+}
+body .experience .timeline ul li .content4 {
+  transform: translateX(-200px);
+  transition-delay: 1.5s;
 }
 body .experience .timeline .timeline-content-info {
   display: flex;

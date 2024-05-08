@@ -631,10 +631,10 @@ body {
 
     .timeline {
       height: fit-content;
-    
+
       ul {
         padding: 50px 0;
-    
+
         li {
           background: $color3;
           position: relative;
@@ -643,7 +643,9 @@ body {
           padding: 20px 0;
           list-style-type: none;
           z-index: 0;
-    
+          opacity: 0;
+          transition: all 0.5s;
+
           &:last-child {
             border-bottom-left-radius: 20px;
             border-bottom-right-radius: 20px;
@@ -667,28 +669,30 @@ body {
             -moz-border-radius: 50%;
             border-radius: 50%;
             z-index: 2;
+            transition: all 0.5s;
           }
-    
+
+
           &:nth-child(odd) .content {
-            left: 50px;
+            left: 51px;
             background: $color2;
             border-radius: 12px;
-    
+
             &:before {
               left: -38px;
             }
           }
-    
+
           &:nth-child(even) .content {
             left: calc(-450px - 49px);
             background: $color2;
             border-radius: 12px;
-    
+
             &:before {
               right: -38px;
             }
           }
-    
+
           .content {
             position: relative;
             top: 0px;
@@ -696,7 +700,8 @@ body {
             padding: 20px;
             z-index: 14;
             color: #fff;
-            
+            opacity: 0;
+            transition: all 0.5s;
             &:before {
               content: "";
               background: $color4;
@@ -705,12 +710,28 @@ body {
               width: 38px;
               height: 4px;
               z-index: 1;
-              opacity:1;
+              transition: all 0.5s;
             }
+          }
+
+          .content1 {
+            transform: translateX(200px);
+          }
+          .content2 {
+            transform: translateX(-200px);
+            transition-delay: 0.5s;
+          }
+          .content3 {
+            transform: translateX(200px);
+            transition-delay: 1s;
+          }
+          .content4 {
+            transform: translateX(-200px);
+            transition-delay: 1.5s;
           }
         }
       }
-      
+
       .timeline-content-info {
         display: flex;
         justify-content: space-between;
@@ -719,12 +740,12 @@ body {
         padding: 2%;
         margin-bottom: 10px;
 
-        .title{
+        .title {
           font-weight: 700;
           font-size: 20px;
           font-style: italic;
         }
-        .date{
+        .date {
           height: fit-content;
           width: fit-content;
           text-align: center;
@@ -732,7 +753,7 @@ body {
           font-weight: 500;
           display: flex;
           flex-direction: column;
-          span{
+          span {
             white-space: nowrap;
           }
         }
@@ -752,8 +773,7 @@ body {
           margin-bottom: 8px;
         }
       }
-    }    
-
+    }
   }
 
   .contact {
@@ -951,4 +971,3 @@ body {
 // experience section END
 
 // media queries END
-
