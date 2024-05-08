@@ -113,7 +113,7 @@ let projectsOptions = {
   threshold: 0.15,
 };
 let experienceOptions = {
-  threshold: 0.6,
+  threshold: 0.5,
 };
 
 function experienceIntersectionCallback(entries, observer) {
@@ -188,7 +188,9 @@ let experienceObserver = new IntersectionObserver(
 );
 
 document.querySelectorAll(".content").forEach((content) => {
+  if (window.innerWidth > 840) {
   experienceObserver.observe(content);
+  }
 });
 
 document.querySelectorAll(".project-page").forEach((project) => {
@@ -271,10 +273,34 @@ function intersectionCallback(entries, observer) {
       li.forEach((li) => {
         li.style.opacity = 1;
       });
+
+      if (window.innerWidth < 840) {
+        content1.style.opacity = 1;
+        content1.style.transform = "translateX(0px)";
+        content2.style.transitionDelay = "0.5s";
+        content2.style.opacity = 1;
+        content2.style.transform = "translateX(0px)";
+        content3.style.transitionDelay = "1s";
+        content3.style.opacity = 1;
+        content3.style.transform = "translateX(0px)";
+        content4.style.transitionDelay = "1.5s";
+        content4.style.opacity = 1;
+        content4.style.transform = "translateX(0px)";
+      }
     } else if (entry.target.id === "experience") {
       li.forEach((li) => {
         li.style.opacity = 0;
       });
+      if (window.innerWidth < 840) {
+        content1.style.opacity = 0;
+        content1.style.transform = "translateX(200px)";
+        content2.style.opacity = 0;
+        content2.style.transform = "translateX(-200px)";
+        content3.style.opacity = 0;
+        content3.style.transform = "translateX(200px)";
+        content4.style.opacity = 0;
+        content4.style.transform = "translateX(-200px)";
+      }
     }
 
     var navLineExperience = document.querySelector(
