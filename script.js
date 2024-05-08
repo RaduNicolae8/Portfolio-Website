@@ -114,11 +114,10 @@ let projectsOptions = {
 };
 let experienceOptions = {
   threshold: 0.6,
-}
+};
 
 function experienceIntersectionCallback(entries, observer) {
   entries.forEach((entry) => {
-  
     if (entry.isIntersecting && entry.target.id === "content1") {
       content1.style.opacity = 1;
       content1.style.transform = "translateX(0px)";
@@ -147,7 +146,6 @@ function experienceIntersectionCallback(entries, observer) {
       content4.style.opacity = 0;
       content4.style.transform = "translateX(-200px)";
     }
-  
   });
 }
 
@@ -269,18 +267,14 @@ function intersectionCallback(entries, observer) {
       hamburgerMenu.style.top = "80px";
     }
 
-
-
     if (entry.target.id === "experience" && entry.isIntersecting) {
       li.forEach((li) => {
         li.style.opacity = 1;
       });
-
     } else if (entry.target.id === "experience") {
       li.forEach((li) => {
         li.style.opacity = 0;
       });
-
     }
 
     var navLineExperience = document.querySelector(
