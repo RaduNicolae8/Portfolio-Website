@@ -11,6 +11,11 @@ const arrow = document.querySelector(".arrow");
 const arrowReverse = document.querySelector(".arrow-reverse");
 const scrollSection = document.querySelector(".scroll-section");
 const projects = document.querySelector(".projects");
+const content1 = document.querySelector(".content1");
+const content2 = document.querySelector(".content2");
+const content3 = document.querySelector(".content3");
+const content4 = document.querySelector(".content4");
+const li = document.querySelectorAll("li");
 var buttonToggled = false;
 var skillsVisitedOddTimes = false;
 var lastScroll = 0;
@@ -107,6 +112,44 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 let projectsOptions = {
   threshold: 0.15,
 };
+let experienceOptions = {
+  threshold: 0.6,
+}
+
+function experienceIntersectionCallback(entries, observer) {
+  entries.forEach((entry) => {
+  
+    if (entry.isIntersecting && entry.target.id === "content1") {
+      content1.style.opacity = 1;
+      content1.style.transform = "translateX(0px)";
+    } else if (entry.target.id === "content1") {
+      content1.style.opacity = 0;
+      content1.style.transform = "translateX(200px)";
+    }
+    if (entry.isIntersecting && entry.target.id === "content2") {
+      content2.style.opacity = 1;
+      content2.style.transform = "translateX(0px)";
+    } else if (entry.target.id === "content2") {
+      content2.style.opacity = 0;
+      content2.style.transform = "translateX(-200px)";
+    }
+    if (entry.isIntersecting && entry.target.id === "content3") {
+      content3.style.opacity = 1;
+      content3.style.transform = "translateX(0px)";
+    } else if (entry.target.id === "content3") {
+      content3.style.opacity = 0;
+      content3.style.transform = "translateX(200px)";
+    }
+    if (entry.isIntersecting && entry.target.id === "content4") {
+      content4.style.opacity = 1;
+      content4.style.transform = "translateX(0px)";
+    } else if (entry.target.id === "content4") {
+      content4.style.opacity = 0;
+      content4.style.transform = "translateX(-200px)";
+    }
+  
+  });
+}
 
 function projectsIntersectionCallback(entries, observer) {
   entries.forEach((entry) => {
@@ -136,12 +179,22 @@ function projectsIntersectionCallback(entries, observer) {
   });
 }
 
-let observer = new IntersectionObserver(
+let projectsObserver = new IntersectionObserver(
   projectsIntersectionCallback,
   projectsOptions
 );
+
+let experienceObserver = new IntersectionObserver(
+  experienceIntersectionCallback,
+  experienceOptions
+);
+
+document.querySelectorAll(".content").forEach((content) => {
+  experienceObserver.observe(content);
+});
+
 document.querySelectorAll(".project-page").forEach((project) => {
-  observer.observe(project);
+  projectsObserver.observe(project);
 });
 
 const navLinks = document.querySelectorAll(".nav-line");
@@ -216,43 +269,18 @@ function intersectionCallback(entries, observer) {
       hamburgerMenu.style.top = "80px";
     }
 
-    var content1 = document.querySelector(".content1");
-    var content2 = document.querySelector(".content2");
-    var content3 = document.querySelector(".content3");
-    var content4 = document.querySelector(".content4");
-    var li1 = document.querySelector(".li1");
-    var li2 = document.querySelector(".li2");
-    var li3 = document.querySelector(".li3");
-    var li4 = document.querySelector(".li4");
+
 
     if (entry.target.id === "experience" && entry.isIntersecting) {
-      content1.style.opacity = 1;
-      content2.style.opacity = 1;
-      content3.style.opacity = 1;
-      content4.style.opacity = 1;
-      li1.style.opacity = 1;
-      li2.style.opacity = 1;
-      li3.style.opacity = 1;
-      li4.style.opacity = 1;
+      li.forEach((li) => {
+        li.style.opacity = 1;
+      });
 
-      content1.style.transform = "translateX(0px)";
-      content2.style.transform = "translateX(0px)";
-      content3.style.transform = "translateX(0px)";
-      content4.style.transform = "translateX(0px)";
     } else if (entry.target.id === "experience") {
-      content1.style.opacity = 0;
-      content2.style.opacity = 0;
-      content3.style.opacity = 0;
-      content4.style.opacity = 0;
-      li1.style.opacity = 0;
-      li2.style.opacity = 0;
-      li3.style.opacity = 0;
-      li4.style.opacity = 0;
+      li.forEach((li) => {
+        li.style.opacity = 0;
+      });
 
-      content1.style.transform = "translateX(200px)";
-      content2.style.transform = "translateX(-200px)";
-      content3.style.transform = "translateX(200px)";
-      content4.style.transform = "translateX(-200px)";
     }
 
     var navLineExperience = document.querySelector(

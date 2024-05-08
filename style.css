@@ -650,7 +650,7 @@ body .experience .timeline ul li .content {
   z-index: 14;
   color: #fff;
   opacity: 0;
-  transition: all 0.5s;
+  transition: all 0.8s;
 }
 body .experience .timeline ul li .content:before {
   content: "";
@@ -667,15 +667,12 @@ body .experience .timeline ul li .content1 {
 }
 body .experience .timeline ul li .content2 {
   transform: translateX(-200px);
-  transition-delay: 0.5s;
 }
 body .experience .timeline ul li .content3 {
   transform: translateX(200px);
-  transition-delay: 1s;
 }
 body .experience .timeline ul li .content4 {
   transform: translateX(-200px);
-  transition-delay: 1.5s;
 }
 body .experience .timeline .timeline-content-info {
   display: flex;
