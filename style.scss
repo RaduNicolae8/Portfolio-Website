@@ -626,6 +626,134 @@ body {
     background-image: url(background2.png);
     background-position: center;
     background-size: contain;
+    height: fit-content;
+    font-family: "Montserrat";
+
+    .timeline {
+      height: fit-content;
+    
+      ul {
+        padding: 50px 0;
+    
+        li {
+          background: $color3;
+          position: relative;
+          margin: 0 auto;
+          width: 5px;
+          padding: 20px 0;
+          list-style-type: none;
+          z-index: 0;
+    
+          &:last-child {
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+          }
+          &:first-child {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+          }
+          &:before {
+            content: "";
+            background: $color1;
+            position: absolute;
+            left: 50%;
+            top: calc(50% - 10px);
+            transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            border: 3px solid $color4;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            z-index: 2;
+          }
+    
+          &:nth-child(odd) .content {
+            left: 50px;
+            background: $color2;
+            border-radius: 12px;
+    
+            &:before {
+              left: -38px;
+            }
+          }
+    
+          &:nth-child(even) .content {
+            left: calc(-450px - 49px);
+            background: $color2;
+            border-radius: 12px;
+    
+            &:before {
+              right: -38px;
+            }
+          }
+    
+          .content {
+            position: relative;
+            top: 0px;
+            width: 450px;
+            padding: 20px;
+            z-index: 14;
+            color: #fff;
+            
+            &:before {
+              content: "";
+              background: $color4;
+              position: absolute;
+              top: calc(50%);
+              width: 38px;
+              height: 4px;
+              z-index: 1;
+              opacity:1;
+            }
+          }
+        }
+      }
+      
+      .timeline-content-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 4px;
+        padding: 2%;
+        margin-bottom: 10px;
+
+        .title{
+          font-weight: 700;
+          font-size: 20px;
+          font-style: italic;
+        }
+        .date{
+          height: fit-content;
+          width: fit-content;
+          text-align: center;
+          font-size: 16px;
+          font-weight: 500;
+          display: flex;
+          flex-direction: column;
+          span{
+            white-space: nowrap;
+          }
+        }
+      }
+      .content-skills {
+        margin: 15px 0px 0px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        span {
+          background: transparent;
+          border: 1px solid $color4;
+          border-radius: 4px;
+          padding: 10px;
+          width: fit-content;
+          height: fit-content;
+          margin-right: 8px;
+          margin-bottom: 8px;
+        }
+      }
+    }    
+
   }
 
   .contact {
@@ -771,7 +899,7 @@ body {
         p {
           font-size: 12px;
         }
-        p::before{
+        p::before {
           font-size: 20px;
         }
       }
@@ -794,4 +922,33 @@ body {
   }
 }
 
+// experience section START
+
+@media screen and (max-width: 1327px) {
+  body .experience .timeline ul li .content {
+    width: 30vw;
+  }
+
+  body .experience .timeline ul li:nth-child(even) .content {
+    left: calc(-30vw - 45px);
+  }
+}
+@media screen and (max-width: 768px) {
+  body .experience .timeline ul li {
+    margin-left: 80px;
+  }
+  body .experience .timeline ul li .content {
+    width: calc(100vw - 140px);
+  }
+  body .experience .timeline ul li:nth-child(even) .content {
+    left: 50px;
+  }
+  body .experience .timeline ul li:nth-child(even) .content:before {
+    left: -38px;
+  }
+}
+
+// experience section END
+
 // media queries END
+

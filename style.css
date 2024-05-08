@@ -580,6 +580,125 @@ body .experience {
   background-image: url(background2.png);
   background-position: center;
   background-size: contain;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-family: "Montserrat";
+}
+body .experience .timeline {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+body .experience .timeline ul {
+  padding: 50px 0;
+}
+body .experience .timeline ul li {
+  background: #c5c6c7;
+  position: relative;
+  margin: 0 auto;
+  width: 5px;
+  padding: 20px 0;
+  list-style-type: none;
+  z-index: 0;
+}
+body .experience .timeline ul li:last-child {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+body .experience .timeline ul li:first-child {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+body .experience .timeline ul li:before {
+  content: "";
+  background: #0b0c10;
+  position: absolute;
+  left: 50%;
+  top: calc(50% - 10px);
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border: 3px solid #66fcf1;
+  border-radius: 50%;
+  z-index: 2;
+}
+body .experience .timeline ul li:nth-child(odd) .content {
+  left: 50px;
+  background: #1f2833;
+  border-radius: 12px;
+}
+body .experience .timeline ul li:nth-child(odd) .content:before {
+  left: -38px;
+}
+body .experience .timeline ul li:nth-child(even) .content {
+  left: -499px;
+  background: #1f2833;
+  border-radius: 12px;
+}
+body .experience .timeline ul li:nth-child(even) .content:before {
+  right: -38px;
+}
+body .experience .timeline ul li .content {
+  position: relative;
+  top: 0px;
+  width: 450px;
+  padding: 20px;
+  z-index: 14;
+  color: #fff;
+}
+body .experience .timeline ul li .content:before {
+  content: "";
+  background: #66fcf1;
+  position: absolute;
+  top: 50%;
+  width: 38px;
+  height: 4px;
+  z-index: 1;
+  opacity: 1;
+}
+body .experience .timeline .timeline-content-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  padding: 2%;
+  margin-bottom: 10px;
+}
+body .experience .timeline .timeline-content-info .title {
+  font-weight: 700;
+  font-size: 20px;
+  font-style: italic;
+}
+body .experience .timeline .timeline-content-info .date {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+body .experience .timeline .timeline-content-info .date span {
+  white-space: nowrap;
+}
+body .experience .timeline .content-skills {
+  margin: 15px 0px 0px 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+body .experience .timeline .content-skills span {
+  background: transparent;
+  border: 1px solid #66fcf1;
+  border-radius: 4px;
+  padding: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
 body .contact {
   font-family: "Montserrat";
@@ -718,5 +837,27 @@ body .contact .container img {
     margin: 40px 0;
     border-bottom-left-radius: 80px;
     border-bottom-right-radius: 80px;
+  }
+}
+@media screen and (max-width: 1327px) {
+  body .experience .timeline ul li .content {
+    width: 30vw;
+  }
+  body .experience .timeline ul li:nth-child(even) .content {
+    left: calc(-30vw - 45px);
+  }
+}
+@media screen and (max-width: 768px) {
+  body .experience .timeline ul li {
+    margin-left: 80px;
+  }
+  body .experience .timeline ul li .content {
+    width: calc(100vw - 140px);
+  }
+  body .experience .timeline ul li:nth-child(even) .content {
+    left: 50px;
+  }
+  body .experience .timeline ul li:nth-child(even) .content:before {
+    left: -38px;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,6 +1,5 @@
 const stickySection = document.querySelector(".sticky");
 const hamburgerMenu = document.querySelector(".hamburger-menu");
-const windowWidth = window.innerWidth;
 const easyServiceDescription = document.querySelector(
   ".EasyService-description"
 );
@@ -25,7 +24,6 @@ var arrowVisible = false;
 
 window.addEventListener("scroll", () => {
   transform(stickySection);
-
 
   var scrollDirection = window.scrollY > lastScroll ? "down" : "up";
 
@@ -53,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
   projects.style.height = parseInt(scrollSectionWidth) / 2 + "px";
   projectsSectionHeight = parseInt(scrollSectionWidth) / 2;
 
-  stoppingPoint = projectsSectionHeight * 2 - windowWidth / 2;
+  stoppingPoint = projectsSectionHeight * 2 - window.innerWidth / 2;
   verticalStoppingpoint = projectsSectionHeight - window.innerHeight;
 });
 window.addEventListener("resize", function () {
@@ -61,7 +59,7 @@ window.addEventListener("resize", function () {
   projects.style.height = parseInt(scrollSectionWidth) / 2 + "px";
   projectsSectionHeight = parseInt(scrollSectionWidth) / 2;
 
-  stoppingPoint = projectsSectionHeight * 2 - windowWidth / 2;
+  stoppingPoint = projectsSectionHeight * 2 - window.innerWidth / 2;
   verticalStoppingpoint = projectsSectionHeight - window.innerHeight;
 });
 
@@ -218,10 +216,36 @@ function intersectionCallback(entries, observer) {
       hamburgerMenu.style.top = "80px";
     }
 
+
+    var navLineExperience = document.querySelector(
+      `.nav-menu-item:has([href='#experience'] ) .nav-line `
+    );
+    var navItemExperience = document.querySelector(
+      `.nav-menu-item:has([href='#experience'] )`
+    );
+    var leftExperience = navItemExperience.querySelector(".left");
+    var rightExperience = navItemExperience.querySelector(".right");
+
     if (entry.target.id === "contact" && entry.isIntersecting) {
       document.querySelector(".contact .container").style.opacity = "1";
+      leftExperience.style.left = "40px";
+      rightExperience.style.left = "40px";
+      rightExperience.style.opacity = 0;
+      rightExperience.style.pointerEvents = "none";
+      if (navLineExperience) {
+        navLineExperience.style.opacity = 0;
+      }
     } else if (entry.target.id === "contact") {
       document.querySelector(".contact .container").style.opacity = "0";
+
+      leftExperience.style.left = 0;
+      rightExperience.style.left = 0;
+      rightExperience.style.opacity = 1;
+      rightExperience.style.pointerEvents = "auto";
+
+      if (navLineExperience) {
+        navLineExperience.style.opacity = 1;
+      }
     }
   });
 }
@@ -236,9 +260,9 @@ const observerWithSmallThreshold = new IntersectionObserver(
 );
 
 document.querySelectorAll("section").forEach((section) => {
-  if (section.id === "projects") {
+  if (section.id === "projects" || section.id === "experience") {
     observerWithSmallThreshold.observe(section);
-  } else if (section.id === "skills" && windowWidth < 840) {
+  } else if (section.id === "skills" && window.innerWidth < 840) {
     observerWithSmallThreshold.observe(section);
   } else {
     observerWithHighThreshold.observe(section);
@@ -274,3 +298,5 @@ hamburgerMenu.addEventListener("click", () => {
   }
   buttonToggled = !buttonToggled;
 });
+
+////////////////////////////////////////
