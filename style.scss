@@ -628,7 +628,8 @@ body {
     background-size: contain;
     height: fit-content;
     font-family: "Montserrat";
-
+    overflow: hidden;
+    
     .timeline {
       height: fit-content;
 

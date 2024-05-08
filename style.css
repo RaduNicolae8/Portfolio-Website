@@ -583,6 +583,7 @@ body .experience {
   height: -moz-fit-content;
   height: fit-content;
   font-family: "Montserrat";
+  overflow: hidden;
 }
 body .experience .timeline {
   height: -moz-fit-content;
