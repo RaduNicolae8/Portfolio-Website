@@ -213,7 +213,7 @@ function intersectionCallback(entries, observer) {
     }
 
     if (entry.target.id === "projects" && entry.isIntersecting) {
-      hamburgerMenu.style.top = "90vh";
+      hamburgerMenu.style.top = "85vh";
     } else if (entry.target.id === "projects") {
       hamburgerMenu.style.top = "80px";
     }
