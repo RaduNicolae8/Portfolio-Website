@@ -210,6 +210,8 @@ body {
       .arrow {
         transition: all 0.5s;
         width: 0;
+        height: 0;
+
         span {
           display: block;
           width: 30px;
@@ -248,6 +250,7 @@ body {
       .arrow-reverse {
         transition: all 0.5s;
         width: 0;
+        height: 0;
 
         span {
           display: block;
@@ -762,9 +765,14 @@ body {
       .description {
         h1 {
           font-size: 20px;
+          padding-top: 20px;
+          padding-bottom: 14px;
         }
         p {
-          font-size: 14px;
+          font-size: 12px;
+        }
+        p::before{
+          font-size: 20px;
         }
       }
     }

@@ -212,6 +212,12 @@ function intersectionCallback(entries, observer) {
       line3.style.opacity = 0;
     }
 
+    if (entry.target.id === "projects" && entry.isIntersecting) {
+      hamburgerMenu.style.top = "90vh";
+    } else if (entry.target.id === "projects") {
+      hamburgerMenu.style.top = "80px";
+    }
+
     if (entry.target.id === "contact" && entry.isIntersecting) {
       document.querySelector(".contact .container").style.opacity = "1";
     } else if (entry.target.id === "contact") {
