@@ -876,7 +876,7 @@ body .contact .container img {
     width: calc(100vw - 140px);
   }
   body .experience .timeline ul li:nth-child(even) .content {
-    left: 50px;
+    left: 51px;
   }
   body .experience .timeline ul li:nth-child(even) .content:before {
     left: -38px;
