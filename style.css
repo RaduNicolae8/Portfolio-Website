@@ -101,6 +101,11 @@ body nav .container .nav-menu-item .left {
 body nav .container .nav-menu-item .left span {
   transition: all 0.5s;
 }
+body nav .container .nav-menu-item .left a {
+  padding-top: 20%;
+  padding-bottom: 50%;
+  padding-left: 16px;
+}
 @media (hover: hover) {
   body nav .container .nav-menu-item .left:has(a:hover) + .right {
     opacity: 1 !important;
