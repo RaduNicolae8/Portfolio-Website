@@ -51,21 +51,26 @@ window.addEventListener("scroll", () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+this.setTimeout(() => {
   scrollSectionWidth = window.getComputedStyle(scrollSection).width;
   projects.style.height = parseInt(scrollSectionWidth) / 2 + "px";
   projectsSectionHeight = parseInt(scrollSectionWidth) / 2;
 
   stoppingPoint = projectsSectionHeight * 2 - window.innerWidth / 2;
   verticalStoppingpoint = projectsSectionHeight - window.innerHeight;
-});
+}, 500);
+
 window.addEventListener("resize", function () {
+
+  this.setTimeout(() => {
   scrollSectionWidth = window.getComputedStyle(scrollSection).width;
   projects.style.height = parseInt(scrollSectionWidth) / 2 + "px";
   projectsSectionHeight = parseInt(scrollSectionWidth) / 2;
 
   stoppingPoint = projectsSectionHeight * 2 - window.innerWidth / 2;
   verticalStoppingpoint = projectsSectionHeight - window.innerHeight;
+  }, 500);
+  
 });
 
 function transform(section) {
@@ -113,36 +118,36 @@ let projectsOptions = {
   threshold: 0.15,
 };
 let experienceOptions = {
-  threshold: 0.5,
+  threshold: 0.4,
 };
 
 function experienceIntersectionCallback(entries, observer) {
   entries.forEach((entry) => {
-    if (entry.isIntersecting && entry.target.id === "content1") {
+    if (entry.isIntersecting && entry.target.id === "content1-li") {
       content1.style.opacity = 1;
       content1.style.transform = "translateX(0px)";
-    } else if (entry.target.id === "content1") {
+    } else if (entry.target.id === "content1-li") {
       content1.style.opacity = 0;
       content1.style.transform = "translateX(200px)";
     }
-    if (entry.isIntersecting && entry.target.id === "content2") {
+    if (entry.isIntersecting && entry.target.id === "content2-li") {
       content2.style.opacity = 1;
       content2.style.transform = "translateX(0px)";
-    } else if (entry.target.id === "content2") {
+    } else if (entry.target.id === "content2-li") {
       content2.style.opacity = 0;
       content2.style.transform = "translateX(-200px)";
     }
-    if (entry.isIntersecting && entry.target.id === "content3") {
+    if (entry.isIntersecting && entry.target.id === "content3-li") {
       content3.style.opacity = 1;
       content3.style.transform = "translateX(0px)";
-    } else if (entry.target.id === "content3") {
+    } else if (entry.target.id === "content3-li") {
       content3.style.opacity = 0;
       content3.style.transform = "translateX(200px)";
     }
-    if (entry.isIntersecting && entry.target.id === "content4") {
+    if (entry.isIntersecting && entry.target.id === "content4-li") {
       content4.style.opacity = 1;
       content4.style.transform = "translateX(0px)";
-    } else if (entry.target.id === "content4") {
+    } else if (entry.target.id === "content4-li") {
       content4.style.opacity = 0;
       content4.style.transform = "translateX(-200px)";
     }
@@ -187,10 +192,8 @@ let experienceObserver = new IntersectionObserver(
   experienceOptions
 );
 
-document.querySelectorAll(".content").forEach((content) => {
-  if (window.innerWidth > 840) {
+document.querySelectorAll("li").forEach((content) => {
   experienceObserver.observe(content);
-  }
 });
 
 document.querySelectorAll(".project-page").forEach((project) => {
@@ -257,6 +260,14 @@ function intersectionCallback(entries, observer) {
       line1.style.opacity = 1;
       line2.style.opacity = 1;
       line3.style.opacity = 1;
+
+      leftExperience.style.left = "40px";
+      rightExperience.style.left = "40px";
+      rightExperience.style.opacity = 0;
+      rightExperience.style.pointerEvents = "none";
+      if (navLineExperience) {
+        navLineExperience.style.opacity = 0;
+      }
     } else if (entry.target.id === "hello") {
       line1.style.opacity = 0;
       line2.style.opacity = 0;
@@ -274,33 +285,11 @@ function intersectionCallback(entries, observer) {
         li.style.opacity = 1;
       });
 
-      if (window.innerWidth < 840) {
-        content1.style.opacity = 1;
-        content1.style.transform = "translateX(0px)";
-        content2.style.transitionDelay = "0.5s";
-        content2.style.opacity = 1;
-        content2.style.transform = "translateX(0px)";
-        content3.style.transitionDelay = "1s";
-        content3.style.opacity = 1;
-        content3.style.transform = "translateX(0px)";
-        content4.style.transitionDelay = "1.5s";
-        content4.style.opacity = 1;
-        content4.style.transform = "translateX(0px)";
-      }
     } else if (entry.target.id === "experience") {
       li.forEach((li) => {
         li.style.opacity = 0;
       });
-      if (window.innerWidth < 840) {
-        content1.style.opacity = 0;
-        content1.style.transform = "translateX(200px)";
-        content2.style.opacity = 0;
-        content2.style.transform = "translateX(-200px)";
-        content3.style.opacity = 0;
-        content3.style.transform = "translateX(200px)";
-        content4.style.opacity = 0;
-        content4.style.transform = "translateX(-200px)";
-      }
+
     }
 
     var navLineExperience = document.querySelector(
