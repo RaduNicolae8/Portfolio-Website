@@ -218,6 +218,7 @@ body {
       left: calc(50vw - 50px);
       width: 100px;
       height: 100px;
+      z-index: 99999;
       .arrow {
         transition: all 0.5s;
         width: 0;

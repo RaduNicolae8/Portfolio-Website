@@ -16,6 +16,7 @@ const content2 = document.querySelector(".content2");
 const content3 = document.querySelector(".content3");
 const content4 = document.querySelector(".content4");
 const li = document.querySelectorAll("li");
+const arrowHref = document.querySelector(".arrow-container");
 var buttonToggled = false;
 var skillsVisitedOddTimes = false;
 var lastScroll = 0;
@@ -38,12 +39,14 @@ window.addEventListener("scroll", () => {
       if (arrowVisible) {
         arrow.style.opacity = 1;
         arrowReverse.style.opacity = 0;
+        arrowHref.href = "#experience";
       }
     } else {
       hamburgerMenu.style.transform = "translateX(0px)";
       if (arrowVisible) {
         arrow.style.opacity = 0;
         arrowReverse.style.opacity = 1;
+        arrowHref.href = "#skills";
       }
     }
 
