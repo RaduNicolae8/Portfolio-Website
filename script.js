@@ -27,11 +27,12 @@ var flag = false;
 var stoppingPoint;
 var verticalStoppingpoint;
 var arrowVisible = false;
+var scrollDirection = "down";
 
 window.addEventListener("scroll", () => {
   transform(stickySection);
 
-  var scrollDirection = window.scrollY > lastScroll ? "down" : "up";
+  scrollDirection = window.scrollY > lastScroll ? "down" : "up";
 
   if (!buttonToggled) {
     if (scrollDirection === "down") {
@@ -211,7 +212,19 @@ function projectsIntersectionCallback(entries, observer) {
       saveMeDescription.style.opacity = 1;
       easyServiceDescription.style.opacity = 0;
       donateCompassDescription.style.opacity = 0;
+    } else if (entry.target.id === "SaveMe-page") {
+      if (scrollDirection === "up"){
+      easyServiceDescription.style.opacity = 1;
+      saveMeDescription.style.opacity = 0;
+      donateCompassDescription.style.opacity = 0;
+      }
+      else{
+        donateCompassDescription.style.opacity = 1;
+        easyServiceDescription.style.opacity = 0;
+        saveMeDescription.style.opacity = 0;
+      }
     }
+
     if (entry.isIntersecting && entry.target.id === "DonateCompass-page") {
       donateCompassDescription.style.opacity = 1;
       easyServiceDescription.style.opacity = 0;
