@@ -218,7 +218,7 @@ body {
       left: calc(50vw - 50px);
       width: 100px;
       height: 100px;
-      z-index: 99999;
+      z-index: 1;
       .arrow {
         transition: all 0.5s;
         width: 0;
@@ -310,26 +310,31 @@ body {
     }
     .description {
       position: sticky;
-      top: 10px;
-      left: 10vw;
+      top: 27vh;
+      // left: calc(50% - 512px);
       transition: all 0.3s;
       width: 80vw;
+      max-width: 1024px;
       height: 0;
       font-family: "Montserrat";
       h1 {
         text-align: center;
         padding-bottom: 20px;
         font-weight: bold;
-        font-style: italic;
       }
       p::before {
         content: ">";
-        font-size: 28px;
-        font-weight: 700;
+        font-size: 22px;
+        font-weight: 500;
         color: #66fcf1;
         position: relative;
-        top: 2.5px;
+        top: 2px;
         margin-right: 6px;
+      }
+      p{
+        font-size: 1.4vh;
+        line-height: 150%;
+        padding-bottom: 5px;
       }
     }
 
@@ -414,7 +419,6 @@ body {
       h3 {
         color: darkgray;
         font-size: 32px;
-        font-style: italic;
         font-weight: 200;
       }
       h4 {
@@ -752,7 +756,6 @@ body {
         .title {
           font-weight: 700;
           font-size: 20px;
-          font-style: italic;
         }
         .date {
           height: fit-content;
@@ -820,7 +823,6 @@ body {
         }
       }
       .email {
-        font-style: italic;
         font-weight: bold;
         color: $color4;
       }
@@ -886,7 +888,7 @@ body {
 @media (max-width: 768px) {
   body {
     nav {
-      z-index: 1;
+      z-index: 2;
       .items {
         position: absolute;
         background-color: #0b0c10;
@@ -926,7 +928,7 @@ body {
           padding-bottom: 14px;
         }
         p {
-          font-size: 12px;
+          font-size: 1.2vh;
         }
         p::before {
           font-size: 20px;

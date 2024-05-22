@@ -61,7 +61,27 @@ this.setTimeout(() => {
 
   stoppingPoint = projectsSectionHeight * 2 - window.innerWidth / 2;
   verticalStoppingpoint = projectsSectionHeight - window.innerHeight;
-}, 500);
+
+  const descriptions = document.querySelectorAll(".description");
+  descriptions.forEach((description) => {
+    const descriptionWidth = parseFloat(window.getComputedStyle(description).width);
+    var descriptionHeight = 0;
+    document.querySelectorAll(".description p").forEach((p) => {
+      descriptionHeight = descriptionHeight + parseFloat(window.getComputedStyle(p).height);
+    });
+    this.document.querySelectorAll(".description h1").forEach((h) => {
+      descriptionHeight = descriptionHeight + parseFloat(window.getComputedStyle(h).height);
+    });
+    var thirtyVh = window.innerHeight * 0.3;
+    descriptionHeight = descriptionHeight /3;
+    descriptionHeight = (thirtyVh - descriptionHeight)/2;
+    console.log(descriptionHeight);
+    description.style.left = 'calc(50% - ' + descriptionWidth / 2 + 'px)';
+    description.style.top = 'calc('+ descriptionHeight +'px)';
+    console.log(description.style.top);
+    console.log(descriptionHeight);
+ });
+  }, 500);
 
 window.addEventListener("resize", function () {
 
@@ -72,6 +92,25 @@ window.addEventListener("resize", function () {
 
   stoppingPoint = projectsSectionHeight * 2 - window.innerWidth / 2;
   verticalStoppingpoint = projectsSectionHeight - window.innerHeight;
+  const descriptions = document.querySelectorAll(".description");
+  descriptions.forEach((description) => {
+    const descriptionWidth = parseFloat(window.getComputedStyle(description).width);
+    var descriptionHeight = 0;
+    document.querySelectorAll(".description p").forEach((p) => {
+      descriptionHeight = descriptionHeight + parseFloat(window.getComputedStyle(p).height);
+    });
+    this.document.querySelectorAll(".description h1").forEach((h) => {
+      descriptionHeight = descriptionHeight + parseFloat(window.getComputedStyle(h).height);
+    });
+    var thirtyVh = window.innerHeight * 0.3;
+    descriptionHeight = descriptionHeight /3;
+    descriptionHeight = (thirtyVh - descriptionHeight)/2;
+    console.log(descriptionHeight);
+    description.style.left = 'calc(50% - ' + descriptionWidth / 2 + 'px)';
+    description.style.top = 'calc('+ descriptionHeight +'px)';
+    console.log(description.style.top);
+    console.log(descriptionHeight);
+ });
   }, 500);
   
 });
