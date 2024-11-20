@@ -15,6 +15,7 @@ const content1 = document.querySelector(".content1");
 const content2 = document.querySelector(".content2");
 const content3 = document.querySelector(".content3");
 const content4 = document.querySelector(".content4");
+const content5 = document.querySelector(".content5");
 const li = document.querySelectorAll("li");
 const arrowHref = document.querySelector(".arrow-container");
 var buttonToggled = false;
@@ -193,6 +194,13 @@ function experienceIntersectionCallback(entries, observer) {
     } else if (entry.target.id === "content4-li") {
       content4.style.opacity = 0;
       content4.style.transform = "translateX(-200px)";
+    }
+    if (entry.isIntersecting && entry.target.id === "content5-li") {
+      content5.style.opacity = 1;
+      content5.style.transform = "translateX(0px)";
+    } else if (entry.target.id === "content5-li") {
+      content5.style.opacity = 0;
+      content5.style.transform = "translateX(200px)";
     }
   });
 }
